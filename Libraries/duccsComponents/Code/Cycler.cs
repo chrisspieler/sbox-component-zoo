@@ -1,4 +1,5 @@
 ﻿using Sandbox;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -6,7 +7,13 @@ namespace Duccsoft;
 
 public class Cycler : Component
 {
-	[Property] public List<GameObject> Options { get; set; } = new();
+	[Property] public Action<GameObject> OnSwitchFrom { get; set; }
+	[Property] public Action<GameObject> OnSwitchTo { get; set; }
+	[Property] public Action OnRollOver { get; set; }
+	[Property] public Action OnRollUnder { get; set; }
+
+	[Property, MakeDirty] public List<GameObject> Options { get; set; } = new();
+	[Property] public bool DisablePreviousOnSwitch { get; set; } = true;
 	[Property] public int StartingIndex 
 	{
 		get => _startingIndex;
@@ -26,9 +33,12 @@ public class Cycler : Component
 
 	[Property, ReadOnly] private int CurrentIndex { get; set; }
 
+	private bool _hasInitialized;
+
 	protected override void OnStart()
 	{
 		GoTo( StartingIndex );
+		_hasInitialized = true;
 	}
 
 	protected override void OnUpdate()
@@ -47,6 +57,14 @@ public class Cycler : Component
 		}
 	}
 
+	public GameObject GetOption( int index )
+	{
+		if ( Options is null || index < 0 || index > Options.Count )
+			return null;
+
+		return Options[index];
+	}
+
 	[Button]
 	public void Next()
 	{
@@ -59,20 +77,59 @@ public class Cycler : Component
 		GoTo( CurrentIndex - 1 );
 	}
 
+	private void HandleSwitchFromCurrent()
+	{
+		var previous = GetOption( CurrentIndex );
+		if ( previous.IsValid() )
+		{
+			if ( DisablePreviousOnSwitch )
+			{
+				previous.Enabled = false;
+			}
+			OnSwitchFrom?.Invoke( previous );
+		}
+	}
+
 	public void GoTo( int index )
 	{
 		if ( Options is null || !Options.Any() )
 			return;
 
+		if ( _hasInitialized )
+		{
+			HandleSwitchFromCurrent();
+		}
+
+		var rollOver = index >= Options.Count;
+		var rollUnder = index < 0;
+
 		index = index.UnsignedMod( Options.Count );
 		CurrentIndex = index;
-		for ( int i = 0; i < Options.Count; i++ )
+		var option = Options[index];
+		if ( !option.IsValid() )
 		{
-			var option = Options[i];
-			if ( !option.IsValid() )
-				continue;
-
-			option.Enabled = i == index;
+			GoTo( 0 );
+			return;
 		}
+		option.Enabled = true;
+		OnSwitchTo?.Invoke( option );
+
+		if ( rollOver )
+		{
+			OnRollOver?.Invoke();
+		}
+		else if ( rollUnder )
+		{
+			OnRollUnder?.Invoke();
+		}
+	}
+
+	[Button]
+	public void PopulateFromChildren()
+	{
+		Options ??= new();
+		Options.Clear();
+		Options.AddRange( GameObject.Children );
+		GoTo( CurrentIndex );
 	}
 }

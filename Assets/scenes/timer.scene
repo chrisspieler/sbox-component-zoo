@@ -1,0 +1,622 @@
+{
+  "__guid": "d93f7c13-ceb4-48cc-ad28-1118a700f07a",
+  "GameObjects": [
+    {
+      "__guid": "d348d79a-641f-40f3-8f1a-226f14ee756f",
+      "Flags": 0,
+      "Name": "Camera",
+      "Position": "-64,-0.00000658081,64",
+      "Rotation": "0,0.3826834,0,0.9238796",
+      "Tags": "maincamera",
+      "Enabled": true,
+      "__Prefab": "prefabs/camera.prefab",
+      "__PrefabVariables": {}
+    },
+    {
+      "__guid": "33319383-dab8-4adc-ad1b-9970bcbac757",
+      "Flags": 0,
+      "Name": "environment",
+      "Enabled": true,
+      "__Prefab": "prefabs/environment.prefab",
+      "__PrefabVariables": {}
+    },
+    {
+      "__guid": "5a384c3b-0434-42bb-8844-813b410a56a5",
+      "Flags": 0,
+      "Name": "Object",
+      "Position": "163.9625,88.48341,-113.6719",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Duccsoft.TimerComponent",
+          "__guid": "c1be12b3-26c3-4d2e-9077-3209acbb87a6",
+          "AutoRepeat": false,
+          "ElapsedSeconds": 4972.656,
+          "HasFired": false,
+          "IntervalSeconds": 1,
+          "RealElapsedSeconds": 88296630,
+          "UseRealTime": false
+        }
+      ]
+    },
+    {
+      "__guid": "93318c1f-1100-4700-a2c7-c59e63044c1e",
+      "Flags": 0,
+      "Name": "Plane",
+      "Rotation": "0,0,1,0.0000001947072",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "d3ca52a5-8f1b-4b45-9d9b-dba6c162181e",
+          "BodyGroups": 18446744073709551615,
+          "Model": "models/dev/plane.vmdl",
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        }
+      ]
+    },
+    {
+      "__guid": "f3715d3b-c79f-4119-b89b-3f49958d86a0",
+      "Flags": 0,
+      "Name": "Light Array",
+      "Position": "32,32,4",
+      "Scale": "0.15,0.15,0.15",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Duccsoft.Cycler",
+          "__guid": "e4816d6a-8829-4cee-8935-6cd8859e25c4",
+          "CurrentIndex": 0,
+          "DisablePreviousOnSwitch": false,
+          "OnRollOver": {
+            "__version": 8,
+            "__guid": "e7472d84-30ac-41c8-ad03-5dd3c52548de",
+            "__changeId": 43,
+            "UserData": {
+              "Title": "On Roll Over",
+              "ReferencedComponentTypes": []
+            },
+            "Variables": [],
+            "Nodes": [
+              {
+                "Id": 0,
+                "Type": "input"
+              },
+              {
+                "Id": 2,
+                "Type": "foreach",
+                "UserData": {
+                  "Position": "192,0"
+                }
+              },
+              {
+                "Id": 3,
+                "Type": "if",
+                "UserData": {
+                  "Position": "396,72"
+                }
+              },
+              {
+                "Id": 4,
+                "Type": "op.equal",
+                "UserData": {
+                  "Position": "324,120"
+                }
+              },
+              {
+                "Id": 8,
+                "Type": "property",
+                "Properties": {
+                  "_name": "Enabled",
+                  "_type": "Sandbox.GameObject"
+                },
+                "UserData": {
+                  "Position": "576,12"
+                }
+              },
+              {
+                "Id": 15,
+                "Type": "scene.ref",
+                "UserData": {
+                  "Position": "-156,12"
+                }
+              },
+              {
+                "Id": 16,
+                "Type": "property",
+                "Properties": {
+                  "_name": "Options",
+                  "_type": "Duccsoft.Cycler"
+                },
+                "UserData": {
+                  "Position": "-36,48"
+                }
+              },
+              {
+                "Id": 18,
+                "Type": "scene.ref",
+                "UserData": {
+                  "Position": "696,96"
+                }
+              },
+              {
+                "Id": 19,
+                "Type": "call",
+                "Properties": {
+                  "_isStatic": false,
+                  "_name": "StartSound",
+                  "_type": "Sandbox.SoundPointComponent"
+                },
+                "UserData": {
+                  "Position": "828,12"
+                }
+              }
+            ],
+            "Links": [
+              {
+                "SrcId": 0,
+                "SrcName": "_signal",
+                "DstId": 2,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 16,
+                "SrcName": "_result",
+                "DstId": 2,
+                "DstName": "enumerable"
+              },
+              {
+                "SrcId": 2,
+                "SrcName": "body",
+                "DstId": 3,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 4,
+                "SrcName": "_result",
+                "DstId": 3,
+                "DstName": "condition"
+              },
+              {
+                "SrcId": 2,
+                "SrcName": "body.index",
+                "DstId": 4,
+                "DstName": "a"
+              },
+              {
+                "Id": 6,
+                "Value": 0,
+                "DstId": 4,
+                "DstName": "b"
+              },
+              {
+                "SrcId": 4,
+                "SrcName": "_result",
+                "DstId": 5,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 3,
+                "SrcName": "false",
+                "DstId": 8,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 2,
+                "SrcName": "body.value",
+                "DstId": 8,
+                "DstName": "_target"
+              },
+              {
+                "Id": 12,
+                "Value": false,
+                "DstId": 8,
+                "DstName": "_value"
+              },
+              {
+                "SrcId": 15,
+                "SrcName": "_result",
+                "DstId": 16,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 8,
+                "SrcName": "_signal",
+                "DstId": 19,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 18,
+                "SrcName": "_result",
+                "DstId": 19,
+                "DstName": "_target"
+              }
+            ],
+            "Defaults": {
+              "$18.component": {
+                "_type": "component",
+                "component_id": "0e123edb-6392-4ec2-b3e4-25dd7bcb758f",
+                "go": "f8da2e64-245b-4b24-b4b4-3b66e46bc342",
+                "component_type": "SoundPointComponent"
+              },
+              "$15.component": {
+                "_type": "component",
+                "component_id": "e4816d6a-8829-4cee-8935-6cd8859e25c4",
+                "go": "f3715d3b-c79f-4119-b89b-3f49958d86a0",
+                "component_type": "Cycler"
+              }
+            }
+          },
+          "OnSwitchTo": {
+            "__version": 8,
+            "__guid": "a134064b-6481-4b31-bc52-663c22e095ca",
+            "__changeId": 11,
+            "UserData": {
+              "Title": "On Switch To",
+              "ReferencedComponentTypes": []
+            },
+            "Variables": [],
+            "Nodes": [
+              {
+                "Id": 0,
+                "Type": "input"
+              },
+              {
+                "Id": 4,
+                "Type": "scene.ref",
+                "UserData": {
+                  "Position": "24,108"
+                }
+              },
+              {
+                "Id": 5,
+                "Type": "call",
+                "Properties": {
+                  "_isStatic": false,
+                  "_name": "StartSound",
+                  "_type": "Sandbox.SoundPointComponent"
+                },
+                "UserData": {
+                  "Position": "180,0"
+                }
+              }
+            ],
+            "Links": [
+              {
+                "SrcId": 0,
+                "SrcName": "_signal",
+                "DstId": 5,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 4,
+                "SrcName": "_result",
+                "DstId": 5,
+                "DstName": "_target"
+              }
+            ],
+            "Defaults": {
+              "$4.component": {
+                "_type": "component",
+                "component_id": "f193e67a-522e-4700-b619-5c7807fb974e",
+                "go": "4553bb45-e80c-4317-b65a-c450752a06c7",
+                "component_type": "SoundPointComponent"
+              }
+            }
+          },
+          "Options": [
+            {
+              "_type": "gameobject",
+              "go": "8b7fce2c-34cb-42b8-b36d-91478d13a302"
+            },
+            {
+              "_type": "gameobject",
+              "go": "a3e5c892-1727-48d2-8a14-9ba1fb80c0e3"
+            },
+            {
+              "_type": "gameobject",
+              "go": "03956d92-7bc4-4bd2-b8d0-f66d137383e5"
+            },
+            {
+              "_type": "gameobject",
+              "go": "96a31478-0175-4e91-b8a3-c16143c53f73"
+            },
+            {
+              "_type": "gameobject",
+              "go": "2ebc3293-df7c-46ce-bc0e-4ac7ccc48360"
+            }
+          ],
+          "StartingIndex": 0
+        },
+        {
+          "__type": "Duccsoft.TimerComponent",
+          "__guid": "af4bd9d5-1c8e-40b7-a80c-e3e84dba7158",
+          "AutoRepeat": true,
+          "ElapsedSeconds": 4972.656,
+          "HasFired": false,
+          "IntervalSeconds": 0.2,
+          "OnFire": {
+            "__version": 8,
+            "__guid": "86517b98-44c1-4d5b-88ab-b0ea3a311ae9",
+            "__changeId": 8,
+            "UserData": {
+              "Title": "On Fire",
+              "ReferencedComponentTypes": []
+            },
+            "Variables": [],
+            "Nodes": [
+              {
+                "Id": 0,
+                "Type": "input"
+              },
+              {
+                "Id": 2,
+                "Type": "scene.ref",
+                "UserData": {
+                  "Position": "-0,108"
+                }
+              },
+              {
+                "Id": 3,
+                "Type": "call",
+                "Properties": {
+                  "_isStatic": false,
+                  "_name": "Next",
+                  "_type": "Duccsoft.Cycler"
+                },
+                "UserData": {
+                  "Position": "156,0"
+                }
+              }
+            ],
+            "Links": [
+              {
+                "SrcId": 0,
+                "SrcName": "_signal",
+                "DstId": 3,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 2,
+                "SrcName": "_result",
+                "DstId": 3,
+                "DstName": "_target"
+              }
+            ],
+            "Defaults": {
+              "$2.component": {
+                "_type": "component",
+                "component_id": "e4816d6a-8829-4cee-8935-6cd8859e25c4",
+                "go": "f3715d3b-c79f-4119-b89b-3f49958d86a0",
+                "component_type": "Cycler"
+              }
+            }
+          },
+          "RealElapsedSeconds": 88296630,
+          "UseRealTime": false
+        }
+      ],
+      "Children": [
+        {
+          "__guid": "4553bb45-e80c-4317-b65a-c450752a06c7",
+          "Flags": 0,
+          "Name": "Tick Sound",
+          "Position": "-53.33333,0,26.66667",
+          "Scale": "6.666667,6.666667,6.666667",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.SoundPointComponent",
+              "__guid": "f193e67a-522e-4700-b619-5c7807fb974e",
+              "DistanceAttenuation": false,
+              "DistanceAttenuationOverride": false,
+              "Force2d": false,
+              "MaxRepeatTime": 1,
+              "MinRepeatTime": 1,
+              "Occlusion": false,
+              "OcclusionOverride": false,
+              "OcclusionRadius": 32,
+              "Pitch": 2,
+              "PlayOnStart": false,
+              "ReflectionOverride": false,
+              "Reflections": false,
+              "Repeat": false,
+              "SoundEvent": "sounds/kenney/ui/ui.drag.stop.sound",
+              "SoundOverride": true,
+              "StopOnNew": true,
+              "TargetMixer": {
+                "Name": "unknown",
+                "Id": "00000000-0000-0000-0000-000000000000"
+              },
+              "Volume": 0.2
+            }
+          ]
+        },
+        {
+          "__guid": "f8da2e64-245b-4b24-b4b4-3b66e46bc342",
+          "Flags": 0,
+          "Name": "Roll Over Sound",
+          "Position": "-53.33333,0,53.33333",
+          "Scale": "6.666667,6.666667,6.666667",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.SoundPointComponent",
+              "__guid": "0e123edb-6392-4ec2-b3e4-25dd7bcb758f",
+              "DistanceAttenuation": false,
+              "DistanceAttenuationOverride": false,
+              "Force2d": false,
+              "MaxRepeatTime": 1,
+              "MinRepeatTime": 1,
+              "Occlusion": false,
+              "OcclusionOverride": false,
+              "OcclusionRadius": 32,
+              "Pitch": 2,
+              "PlayOnStart": false,
+              "ReflectionOverride": false,
+              "Reflections": false,
+              "Repeat": false,
+              "SoundEvent": "sounds/kenney/ui/ui.drag.start.sound",
+              "SoundOverride": true,
+              "StopOnNew": true,
+              "TargetMixer": {
+                "Name": "unknown",
+                "Id": "00000000-0000-0000-0000-000000000000"
+              },
+              "Volume": 0.3
+            }
+          ]
+        },
+        {
+          "__guid": "8b7fce2c-34cb-42b8-b36d-91478d13a302",
+          "Flags": 0,
+          "Name": "Cube",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "3b4f34b6-eeea-4b62-8fe4-9779473bb539",
+              "BodyGroups": 18446744073709551615,
+              "MaterialOverride": "materials/dev/primary_white_emissive.vmat",
+              "Model": "models/dev/box.vmdl",
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
+              "RenderType": "On",
+              "Tint": "1,0,0,1"
+            }
+          ]
+        },
+        {
+          "__guid": "a3e5c892-1727-48d2-8a14-9ba1fb80c0e3",
+          "Flags": 0,
+          "Name": "Cube",
+          "Position": "0,-80,0",
+          "Components": [
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "d8066a82-b440-49a7-997c-a6b566305941",
+              "BodyGroups": 18446744073709551615,
+              "MaterialOverride": "materials/dev/primary_white_emissive.vmat",
+              "Model": "models/dev/box.vmdl",
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
+              "RenderType": "On",
+              "Tint": "1,0.05,0,1"
+            }
+          ]
+        },
+        {
+          "__guid": "03956d92-7bc4-4bd2-b8d0-f66d137383e5",
+          "Flags": 0,
+          "Name": "Cube",
+          "Position": "0,-160,0",
+          "Components": [
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "6babd861-34e0-4e6c-96af-b67a4e708547",
+              "BodyGroups": 18446744073709551615,
+              "MaterialOverride": "materials/dev/primary_white_emissive.vmat",
+              "Model": "models/dev/box.vmdl",
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
+              "RenderType": "On",
+              "Tint": "1,0.41667,0,1"
+            }
+          ]
+        },
+        {
+          "__guid": "96a31478-0175-4e91-b8a3-c16143c53f73",
+          "Flags": 0,
+          "Name": "Cube",
+          "Position": "0,-240,0",
+          "Components": [
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "bcdfc0bc-2591-488b-aa08-83bb99d2cb67",
+              "BodyGroups": 18446744073709551615,
+              "MaterialOverride": "materials/dev/primary_white_emissive.vmat",
+              "Model": "models/dev/box.vmdl",
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
+              "RenderType": "On",
+              "Tint": "0.73333,1,0,1"
+            }
+          ]
+        },
+        {
+          "__guid": "2ebc3293-df7c-46ce-bc0e-4ac7ccc48360",
+          "Flags": 0,
+          "Name": "Cube",
+          "Position": "0,-320,0",
+          "Components": [
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "54ab2a43-12f8-46c3-9c21-13df43f7209e",
+              "BodyGroups": 18446744073709551615,
+              "MaterialOverride": "materials/dev/primary_white_emissive.vmat",
+              "Model": "models/dev/box.vmdl",
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
+              "RenderType": "On",
+              "Tint": "0.18333,1,0,1"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "SceneProperties": {
+    "FixedUpdateFrequency": 50,
+    "MaxFixedUpdates": 5,
+    "NetworkFrequency": 30,
+    "NetworkInterpolation": true,
+    "PhysicsSubSteps": 1,
+    "ThreadedAnimation": true,
+    "TimeScale": 1,
+    "UseFixedUpdate": true,
+    "NavMesh": {
+      "Enabled": false,
+      "IncludeStaticBodies": true,
+      "IncludeKeyframedBodies": true,
+      "EditorAutoUpdate": true,
+      "AgentHeight": 64,
+      "AgentRadius": 16,
+      "AgentStepSize": 18,
+      "AgentMaxSlope": 40,
+      "ExcludedBodies": "",
+      "IncludedBodies": ""
+    }
+  },
+  "Title": "timer",
+  "Description": "",
+  "ResourceVersion": 1,
+  "__references": [],
+  "__version": 1
+}
