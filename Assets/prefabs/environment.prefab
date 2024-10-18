@@ -1,0 +1,53 @@
+{
+  "RootObject": {
+    "__guid": "9d2a83a5-9b23-4f80-af61-23b1042c047c",
+    "Flags": 0,
+    "Name": "environment",
+    "Enabled": true,
+    "Children": [
+      {
+        "__guid": "6e8c5a1d-2a22-4403-950c-756a480e74f3",
+        "Flags": 0,
+        "Name": "Sun",
+        "Rotation": "0.3659981,0.2113092,-0.7848855,0.4531539",
+        "Tags": "light_directional,light",
+        "Enabled": true,
+        "Components": [
+          {
+            "__type": "Sandbox.DirectionalLight",
+            "__guid": "d842e5f3-4abb-47d7-924c-816d7833f385",
+            "FogMode": "Enabled",
+            "FogStrength": 1,
+            "LightColor": "0.91373,0.98039,1,1",
+            "Shadows": true,
+            "SkyColor": "0,0,0,0"
+          }
+        ]
+      },
+      {
+        "__guid": "317827df-4645-4182-ad6e-2a5a079c5461",
+        "Flags": 0,
+        "Name": "2D Skybox",
+        "Tags": "skybox",
+        "Enabled": true,
+        "Components": [
+          {
+            "__type": "Sandbox.SkyBox2D",
+            "__guid": "c1bb5241-d79e-4b30-9c25-7fd43085101b",
+            "SkyIndirectLighting": true,
+            "SkyMaterial": "materials/skybox/skybox_day_01.vmat",
+            "Tint": "1,1,1,1"
+          }
+        ]
+      }
+    ],
+    "__variables": []
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "DontBreakAsTemplate": false,
+  "ResourceVersion": 1,
+  "__references": [],
+  "__version": 1
+}
