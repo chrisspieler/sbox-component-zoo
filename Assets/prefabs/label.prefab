@@ -1,0 +1,88 @@
+{
+  "RootObject": {
+    "__guid": "3cd2295c-b0d1-4a9a-9685-57c93e980cb6",
+    "Flags": 0,
+    "Name": "label",
+    "Enabled": true,
+    "Components": [
+      {
+        "__type": "Sandbox.TextRenderer",
+        "__guid": "f0297271-d44e-4d75-828b-557317cf218f",
+        "__version": 1,
+        "BlendMode": "Normal",
+        "RenderOptions": {
+          "GameLayer": true,
+          "OverlayLayer": false,
+          "BloomLayer": false,
+          "AfterUILayer": false
+        },
+        "Scale": 0.3,
+        "TextAlignment": "Center",
+        "TextScope": {
+          "Text": "Default Text",
+          "TextColor": "1,1,1,1",
+          "FontName": "Poppins",
+          "FontSize": 64,
+          "FontWeight": 400,
+          "LineHeight": 1,
+          "Outline": {
+            "Enabled": true,
+            "Size": 4,
+            "Color": "0,0,0,1"
+          },
+          "Shadow": {
+            "Enabled": true,
+            "Size": 4,
+            "Color": "0,0,0,1",
+            "Offset": "4,4"
+          },
+          "OutlineUnder": {
+            "Size": 4,
+            "Color": "0,1,0,1"
+          },
+          "ShadowUnder": {
+            "Size": 4,
+            "Color": "0,0,0,1",
+            "Offset": "4,4"
+          }
+        }
+      },
+      {
+        "__type": "Duccsoft.LookAt",
+        "__guid": "55bdef1a-2c22-48ef-892d-41098f94beb3",
+        "RotationOffset": "0,180,0",
+        "TargetMainCamera": true
+      }
+    ],
+    "Children": [],
+    "__variables": [
+      {
+        "Id": "Text Scope",
+        "Title": "Text Scope",
+        "Targets": [
+          {
+            "Id": "f0297271-d44e-4d75-828b-557317cf218f",
+            "Property": "TextScope"
+          }
+        ]
+      },
+      {
+        "Id": "Scale",
+        "Title": "Scale",
+        "Targets": [
+          {
+            "Id": "f0297271-d44e-4d75-828b-557317cf218f",
+            "Property": "Scale"
+          }
+        ]
+      }
+    ]
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "DontBreakAsTemplate": false,
+  "ResourceVersion": 1,
+  "__references": [],
+  "__version": 1
+}

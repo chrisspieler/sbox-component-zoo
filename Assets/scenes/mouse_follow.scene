@@ -1,0 +1,390 @@
+{
+  "__guid": "c1be0639-e5e9-4c6b-af4e-c6ac0141ee2c",
+  "GameObjects": [
+    {
+      "__guid": "627f0f90-3c73-4663-9205-a3056e5abb91",
+      "Flags": 0,
+      "Name": "Camera",
+      "Position": "-128,-128,-128",
+      "Rotation": "0.1294095,-0.2241439,0.4829628,0.8365163",
+      "Tags": "maincamera",
+      "Enabled": true,
+      "__Prefab": "prefabs/camera.prefab",
+      "__PrefabVariables": {}
+    },
+    {
+      "__guid": "79136090-0d41-4a9c-a5b7-a902ecbb20bc",
+      "Flags": 0,
+      "Name": "environment",
+      "Enabled": true,
+      "__Prefab": "prefabs/environment.prefab",
+      "__PrefabVariables": {}
+    },
+    {
+      "__guid": "3351e377-21ee-4a7e-a2fc-60c123ece824",
+      "Flags": 0,
+      "Name": "Cycler",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Duccsoft.Cycler",
+          "__guid": "65b9d8ce-185c-4d54-b374-18395e669263",
+          "ActionNext": "right",
+          "ActionPrevious": "left",
+          "CurrentIndex": 0,
+          "Options": [
+            {
+              "_type": "gameobject",
+              "go": "71a4df4b-45b8-4b1d-9618-b881f8ba5442"
+            },
+            {
+              "_type": "gameobject",
+              "go": "a7fef73b-93c3-4a25-9f2d-cd40c077194a"
+            },
+            {
+              "_type": "gameobject",
+              "go": "e483cebe-ca76-40ce-9d10-2b514deb8603"
+            },
+            {
+              "_type": "gameobject",
+              "go": "c44e6dd3-f983-4904-97fe-65d5da448d89"
+            }
+          ],
+          "StartingIndex": 0
+        }
+      ],
+      "Children": [
+        {
+          "__guid": "71a4df4b-45b8-4b1d-9618-b881f8ba5442",
+          "Flags": 0,
+          "Name": "Screen Sphere",
+          "Scale": "0.05,0.05,0.05",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "697f5277-714d-4c7d-b859-e4a7942b9ed4",
+              "BodyGroups": 18446744073709551615,
+              "Model": "models/dev/sphere.vmdl",
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "Duccsoft.MouseFollow",
+              "__guid": "ca1672a8-b13e-4f0a-b485-298fa1684c27",
+              "Distance": 100,
+              "Mode": "Screen",
+              "PlaneNormal": "0,0,1",
+              "PlaneOffset": "0,0,0"
+            }
+          ],
+          "Children": [
+            {
+              "__guid": "499af0a7-7a7b-4dbe-861e-f7385bc91475",
+              "Flags": 0,
+              "Name": "Label",
+              "Position": "0,0,50",
+              "Enabled": true,
+              "__Prefab": "prefabs/label.prefab",
+              "__PrefabVariables": {
+                "Text Scope": {
+                  "Text": "Screen",
+                  "TextColor": "1,1,1,1",
+                  "FontName": "Poppins",
+                  "FontSize": 64,
+                  "FontWeight": 400,
+                  "LineHeight": 1,
+                  "Outline": {
+                    "Enabled": true,
+                    "Size": 4,
+                    "Color": "0,0,0,1"
+                  },
+                  "Shadow": {
+                    "Enabled": true,
+                    "Size": 4,
+                    "Color": "0,0,0,1",
+                    "Offset": "4,4"
+                  },
+                  "OutlineUnder": {
+                    "Size": 4,
+                    "Color": "0,1,0,1"
+                  },
+                  "ShadowUnder": {
+                    "Size": 4,
+                    "Color": "0,0,0,1",
+                    "Offset": "4,4"
+                  }
+                },
+                "Scale": 0.3
+              }
+            }
+          ]
+        },
+        {
+          "__guid": "a7fef73b-93c3-4a25-9f2d-cd40c077194a",
+          "Flags": 0,
+          "Name": "XY Sphere",
+          "Scale": "0.15,0.15,0.15",
+          "Components": [
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "103354b2-e94f-414e-8cf6-2a2bebb9b896",
+              "BodyGroups": 18446744073709551615,
+              "Model": "models/dev/sphere.vmdl",
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
+              "RenderType": "On",
+              "Tint": "0.16888,0.15706,0.51163,1"
+            },
+            {
+              "__type": "Duccsoft.MouseFollow",
+              "__guid": "1d47251a-2631-4a04-a3c2-2ef13e1de4d7",
+              "Distance": 3000,
+              "Mode": "WorldPlane",
+              "PlaneNormal": "0,0,1",
+              "PlaneOffset": "0,0,0"
+            },
+            {
+              "__type": "Duccsoft.WorldPlaneDebug",
+              "__guid": "b8c5cae5-a6bc-4781-95f6-fca27bcd6217",
+              "Alpha": 1,
+              "Axis": "XY"
+            }
+          ],
+          "Children": [
+            {
+              "__guid": "040791ba-0a7a-4e8c-b1b6-4632338f2eec",
+              "Flags": 0,
+              "Name": "Label",
+              "Position": "0,0,50",
+              "Enabled": true,
+              "__Prefab": "prefabs/label.prefab",
+              "__PrefabVariables": {
+                "Text Scope": {
+                  "Text": "XY",
+                  "TextColor": "1,1,1,1",
+                  "FontName": "Poppins",
+                  "FontSize": 64,
+                  "FontWeight": 400,
+                  "LineHeight": 1,
+                  "Outline": {
+                    "Enabled": true,
+                    "Size": 4,
+                    "Color": "0,0,0,1"
+                  },
+                  "Shadow": {
+                    "Enabled": true,
+                    "Size": 4,
+                    "Color": "0,0,0,1",
+                    "Offset": "4,4"
+                  },
+                  "OutlineUnder": {
+                    "Size": 4,
+                    "Color": "0,1,0,1"
+                  },
+                  "ShadowUnder": {
+                    "Size": 4,
+                    "Color": "0,0,0,1",
+                    "Offset": "4,4"
+                  }
+                },
+                "Scale": 0.3
+              }
+            }
+          ]
+        },
+        {
+          "__guid": "e483cebe-ca76-40ce-9d10-2b514deb8603",
+          "Flags": 0,
+          "Name": "XZ Sphere",
+          "Scale": "0.15,0.15,0.15",
+          "Components": [
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "ef0c6fc3-fc29-4436-a58b-fa44bc5d1b1e",
+              "BodyGroups": 18446744073709551615,
+              "Model": "models/dev/sphere.vmdl",
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
+              "RenderType": "On",
+              "Tint": "0.37571,0.51163,0.15706,1"
+            },
+            {
+              "__type": "Duccsoft.MouseFollow",
+              "__guid": "5346ef73-c405-433e-a92b-5108b20274ca",
+              "Distance": 3000,
+              "Mode": "WorldPlane",
+              "PlaneNormal": "0,1,0",
+              "PlaneOffset": "0,0,0"
+            },
+            {
+              "__type": "Duccsoft.WorldPlaneDebug",
+              "__guid": "21825b4c-62a1-42cb-b61c-ddfe4afbd936",
+              "Alpha": 1,
+              "Axis": "ZX"
+            }
+          ],
+          "Children": [
+            {
+              "__guid": "d424b149-9e76-43d8-95c1-8686e0d442ca",
+              "Flags": 0,
+              "Name": "Label",
+              "Position": "0,0,50",
+              "Enabled": true,
+              "__Prefab": "prefabs/label.prefab",
+              "__PrefabVariables": {
+                "Text Scope": {
+                  "Text": "XZ",
+                  "TextColor": "1,1,1,1",
+                  "FontName": "Poppins",
+                  "FontSize": 64,
+                  "FontWeight": 400,
+                  "LineHeight": 1,
+                  "Outline": {
+                    "Enabled": true,
+                    "Size": 4,
+                    "Color": "0,0,0,1"
+                  },
+                  "Shadow": {
+                    "Enabled": true,
+                    "Size": 4,
+                    "Color": "0,0,0,1",
+                    "Offset": "4,4"
+                  },
+                  "OutlineUnder": {
+                    "Size": 4,
+                    "Color": "0,1,0,1"
+                  },
+                  "ShadowUnder": {
+                    "Size": 4,
+                    "Color": "0,0,0,1",
+                    "Offset": "4,4"
+                  }
+                },
+                "Scale": 0.3
+              }
+            }
+          ]
+        },
+        {
+          "__guid": "c44e6dd3-f983-4904-97fe-65d5da448d89",
+          "Flags": 0,
+          "Name": "YZ Sphere",
+          "Scale": "0.15,0.15,0.15",
+          "Components": [
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "a0897285-6c37-486b-ba73-d523d96059c9",
+              "BodyGroups": 18446744073709551615,
+              "Model": "models/dev/sphere.vmdl",
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
+              "RenderType": "On",
+              "Tint": "0.51163,0.15706,0.15706,1"
+            },
+            {
+              "__type": "Duccsoft.MouseFollow",
+              "__guid": "a189f605-51fb-4a9c-b708-8dc650a5fca0",
+              "Distance": 3000,
+              "Mode": "WorldPlane",
+              "PlaneNormal": "1,0,0",
+              "PlaneOffset": "0,0,0"
+            },
+            {
+              "__type": "Duccsoft.WorldPlaneDebug",
+              "__guid": "044b214b-9925-4424-9f48-12ff50cb31c2",
+              "Alpha": 1,
+              "Axis": "YZ"
+            }
+          ],
+          "Children": [
+            {
+              "__guid": "8914a2ae-1e13-4bf2-90cc-869ad4e3ece3",
+              "Flags": 0,
+              "Name": "Label",
+              "Position": "0,0,50",
+              "Enabled": true,
+              "__Prefab": "prefabs/label.prefab",
+              "__PrefabVariables": {
+                "Text Scope": {
+                  "Text": "YZ",
+                  "TextColor": "1,1,1,1",
+                  "FontName": "Poppins",
+                  "FontSize": 64,
+                  "FontWeight": 400,
+                  "LineHeight": 1,
+                  "Outline": {
+                    "Enabled": true,
+                    "Size": 4,
+                    "Color": "0,0,0,1"
+                  },
+                  "Shadow": {
+                    "Enabled": true,
+                    "Size": 4,
+                    "Color": "0,0,0,1",
+                    "Offset": "4,4"
+                  },
+                  "OutlineUnder": {
+                    "Size": 4,
+                    "Color": "0,1,0,1"
+                  },
+                  "ShadowUnder": {
+                    "Size": 4,
+                    "Color": "0,0,0,1",
+                    "Offset": "4,4"
+                  }
+                },
+                "Scale": 0.3
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "SceneProperties": {
+    "FixedUpdateFrequency": 50,
+    "MaxFixedUpdates": 5,
+    "NetworkFrequency": 30,
+    "NetworkInterpolation": true,
+    "PhysicsSubSteps": 1,
+    "ThreadedAnimation": true,
+    "TimeScale": 1,
+    "UseFixedUpdate": true,
+    "NavMesh": {
+      "Enabled": false,
+      "IncludeStaticBodies": true,
+      "IncludeKeyframedBodies": true,
+      "EditorAutoUpdate": true,
+      "AgentHeight": 64,
+      "AgentRadius": 16,
+      "AgentStepSize": 18,
+      "AgentMaxSlope": 40,
+      "ExcludedBodies": "",
+      "IncludedBodies": ""
+    }
+  },
+  "Title": "mouse_follow",
+  "Description": "",
+  "ResourceVersion": 1,
+  "__references": [],
+  "__version": 1
+}

@@ -18,74 +18,8 @@
       "Rotation": "0,0.3007058,0,0.9537169",
       "Tags": "maincamera",
       "Enabled": true,
-      "Components": [
-        {
-          "__type": "Sandbox.CameraComponent",
-          "__guid": "d5b24035-41ac-4878-948a-704af55a8724",
-          "BackgroundColor": "0.33333,0.46275,0.52157,1",
-          "ClearFlags": "All",
-          "FieldOfView": 90,
-          "IsMainCamera": true,
-          "Orthographic": false,
-          "OrthographicHeight": 1204,
-          "Priority": 1,
-          "RenderExcludeTags": "",
-          "RenderTags": "",
-          "TargetEye": "None",
-          "Viewport": "0,0,1,1",
-          "ZFar": 10000,
-          "ZNear": 10
-        },
-        {
-          "__type": "Sandbox.Bloom",
-          "__guid": "1bd5bbe7-b88d-4def-8762-ba6de8fe0de0",
-          "BloomColor": {
-            "color": [
-              {
-                "c": "1,1,1,1"
-              },
-              {
-                "t": 1,
-                "c": "1,1,1,1"
-              }
-            ]
-          },
-          "BloomCurve": [
-            {
-              "y": 0.5
-            },
-            {
-              "x": 1,
-              "y": 1
-            }
-          ],
-          "Mode": "Additive",
-          "Strength": 0.4,
-          "Threshold": 0.5,
-          "ThresholdWidth": 0
-        },
-        {
-          "__type": "Sandbox.AmbientOcclusion",
-          "__guid": "85b94201-6a21-4e16-b0e7-2d1483c8a32a",
-          "FalloffDistance": 1,
-          "Intensity": 8,
-          "Quality": "High",
-          "Radius": 32
-        },
-        {
-          "__type": "Sandbox.Tonemapping",
-          "__guid": "f1fb3fc8-7782-45f6-b706-87d11289a92a",
-          "__version": 1,
-          "AutoExposureEnabled": false,
-          "ExposureBias": 2,
-          "ExposureCompensation": 0,
-          "ExposureMethod": "RGB",
-          "MaximumExposure": 3,
-          "MinimumExposure": 1,
-          "Mode": "ACES",
-          "Rate": 1
-        }
-      ]
+      "__Prefab": "prefabs/camera.prefab",
+      "__PrefabVariables": {}
     },
     {
       "__guid": "19fbf9de-90a7-48ee-b720-4851dc7e0203",
@@ -416,60 +350,38 @@
           "Name": "Label",
           "Position": "0,0,50",
           "Enabled": true,
-          "Components": [
-            {
-              "__type": "Sandbox.TextRenderer",
-              "__guid": "f0297271-d44e-4d75-828b-557317cf218f",
-              "__version": 1,
-              "BlendMode": "Normal",
-              "RenderOptions": {
-                "GameLayer": true,
-                "OverlayLayer": false,
-                "BloomLayer": false,
-                "AfterUILayer": false
+          "__Prefab": "prefabs/label.prefab",
+          "__PrefabVariables": {
+            "Text Scope": {
+              "Text": "World \u002BX",
+              "TextColor": "1,1,1,1",
+              "FontName": "Poppins",
+              "FontSize": 64,
+              "FontWeight": 400,
+              "LineHeight": 1,
+              "Outline": {
+                "Enabled": true,
+                "Size": 4,
+                "Color": "0,0,0,1"
               },
-              "Scale": 0.3,
-              "TextAlignment": "Center",
-              "TextScope": {
-                "Text": "World \u002BX",
-                "TextColor": "1,1,1,1",
-                "FontName": "Poppins",
-                "FontSize": 64,
-                "FontWeight": 400,
-                "LineHeight": 1,
-                "Outline": {
-                  "Enabled": true,
-                  "Size": 4,
-                  "Color": "0,0,0,1"
-                },
-                "Shadow": {
-                  "Enabled": true,
-                  "Size": 4,
-                  "Color": "0,0,0,1",
-                  "Offset": "4,4"
-                },
-                "OutlineUnder": {
-                  "Size": 4,
-                  "Color": "0,1,0,1"
-                },
-                "ShadowUnder": {
-                  "Size": 4,
-                  "Color": "0,0,0,1",
-                  "Offset": "4,4"
-                }
+              "Shadow": {
+                "Enabled": true,
+                "Size": 4,
+                "Color": "0,0,0,1",
+                "Offset": "4,4"
+              },
+              "OutlineUnder": {
+                "Size": 4,
+                "Color": "0,1,0,1"
+              },
+              "ShadowUnder": {
+                "Size": 4,
+                "Color": "0,0,0,1",
+                "Offset": "4,4"
               }
             },
-            {
-              "__type": "Duccsoft.LookAt",
-              "__guid": "55bdef1a-2c22-48ef-892d-41098f94beb3",
-              "RotationOffset": "0,180,0",
-              "Target": {
-                "_type": "gameobject",
-                "go": "4aa33600-5daf-42bb-bcc3-913dbd881943"
-              },
-              "TargetMainCamera": true
-            }
-          ]
+            "Scale": 0.3
+          }
         }
       ]
     },
@@ -534,65 +446,43 @@
       ],
       "Children": [
         {
-          "__guid": "33d3a987-86b8-4735-b667-c37ed966b5f9",
+          "__guid": "eb09c43b-f031-4b98-b918-54fa8d67d9c9",
           "Flags": 0,
           "Name": "Label",
           "Position": "0,0,50",
           "Enabled": true,
-          "Components": [
-            {
-              "__type": "Sandbox.TextRenderer",
-              "__guid": "a81d2bea-38df-44bd-afbf-ea3db4d89616",
-              "__version": 1,
-              "BlendMode": "Normal",
-              "RenderOptions": {
-                "GameLayer": true,
-                "OverlayLayer": false,
-                "BloomLayer": false,
-                "AfterUILayer": false
+          "__Prefab": "prefabs/label.prefab",
+          "__PrefabVariables": {
+            "Text Scope": {
+              "Text": "World -X",
+              "TextColor": "1,1,1,1",
+              "FontName": "Poppins",
+              "FontSize": 64,
+              "FontWeight": 400,
+              "LineHeight": 1,
+              "Outline": {
+                "Enabled": true,
+                "Size": 4,
+                "Color": "0,0,0,1"
               },
-              "Scale": 0.3,
-              "TextAlignment": "Center",
-              "TextScope": {
-                "Text": "World -X",
-                "TextColor": "1,1,1,1",
-                "FontName": "Poppins",
-                "FontSize": 64,
-                "FontWeight": 400,
-                "LineHeight": 1,
-                "Outline": {
-                  "Enabled": true,
-                  "Size": 4,
-                  "Color": "0,0,0,1"
-                },
-                "Shadow": {
-                  "Enabled": true,
-                  "Size": 4,
-                  "Color": "0,0,0,1",
-                  "Offset": "4,4"
-                },
-                "OutlineUnder": {
-                  "Size": 4,
-                  "Color": "0,1,0,1"
-                },
-                "ShadowUnder": {
-                  "Size": 4,
-                  "Color": "0,0,0,1",
-                  "Offset": "4,4"
-                }
+              "Shadow": {
+                "Enabled": true,
+                "Size": 4,
+                "Color": "0,0,0,1",
+                "Offset": "4,4"
+              },
+              "OutlineUnder": {
+                "Size": 4,
+                "Color": "0,1,0,1"
+              },
+              "ShadowUnder": {
+                "Size": 4,
+                "Color": "0,0,0,1",
+                "Offset": "4,4"
               }
             },
-            {
-              "__type": "Duccsoft.LookAt",
-              "__guid": "65294f28-254d-429e-b632-84e4543ca104",
-              "RotationOffset": "0,180,0",
-              "Target": {
-                "_type": "gameobject",
-                "go": "4aa33600-5daf-42bb-bcc3-913dbd881943"
-              },
-              "TargetMainCamera": true
-            }
-          ]
+            "Scale": 0.3
+          }
         }
       ]
     },
@@ -657,65 +547,43 @@
       ],
       "Children": [
         {
-          "__guid": "c4bbf809-34e3-42a2-83f4-1020591fbc96",
+          "__guid": "90d2318e-0fdf-4ed5-9ccf-b52ce220e1e3",
           "Flags": 0,
           "Name": "Label",
           "Position": "0,0,50",
           "Enabled": true,
-          "Components": [
-            {
-              "__type": "Sandbox.TextRenderer",
-              "__guid": "d8908e12-fd0b-475a-aa10-fc249a80d9e9",
-              "__version": 1,
-              "BlendMode": "Normal",
-              "RenderOptions": {
-                "GameLayer": true,
-                "OverlayLayer": false,
-                "BloomLayer": false,
-                "AfterUILayer": false
+          "__Prefab": "prefabs/label.prefab",
+          "__PrefabVariables": {
+            "Text Scope": {
+              "Text": "World -Y",
+              "TextColor": "1,1,1,1",
+              "FontName": "Poppins",
+              "FontSize": 64,
+              "FontWeight": 400,
+              "LineHeight": 1,
+              "Outline": {
+                "Enabled": true,
+                "Size": 4,
+                "Color": "0,0,0,1"
               },
-              "Scale": 0.3,
-              "TextAlignment": "Center",
-              "TextScope": {
-                "Text": "World -Y",
-                "TextColor": "1,1,1,1",
-                "FontName": "Poppins",
-                "FontSize": 64,
-                "FontWeight": 400,
-                "LineHeight": 1,
-                "Outline": {
-                  "Enabled": true,
-                  "Size": 4,
-                  "Color": "0,0,0,1"
-                },
-                "Shadow": {
-                  "Enabled": true,
-                  "Size": 4,
-                  "Color": "0,0,0,1",
-                  "Offset": "4,4"
-                },
-                "OutlineUnder": {
-                  "Size": 4,
-                  "Color": "0,1,0,1"
-                },
-                "ShadowUnder": {
-                  "Size": 4,
-                  "Color": "0,0,0,1",
-                  "Offset": "4,4"
-                }
+              "Shadow": {
+                "Enabled": true,
+                "Size": 4,
+                "Color": "0,0,0,1",
+                "Offset": "4,4"
+              },
+              "OutlineUnder": {
+                "Size": 4,
+                "Color": "0,1,0,1"
+              },
+              "ShadowUnder": {
+                "Size": 4,
+                "Color": "0,0,0,1",
+                "Offset": "4,4"
               }
             },
-            {
-              "__type": "Duccsoft.LookAt",
-              "__guid": "6c046862-f8fb-449c-b144-6dfc56da6519",
-              "RotationOffset": "0,180,0",
-              "Target": {
-                "_type": "gameobject",
-                "go": "4aa33600-5daf-42bb-bcc3-913dbd881943"
-              },
-              "TargetMainCamera": true
-            }
-          ]
+            "Scale": 0.3
+          }
         }
       ]
     },
@@ -780,65 +648,43 @@
       ],
       "Children": [
         {
-          "__guid": "f1cbc730-769d-404c-b1c8-8b31b0d5e873",
+          "__guid": "47dc338e-6025-4516-acd4-a9527a48e64d",
           "Flags": 0,
           "Name": "Label",
           "Position": "0,0,50",
           "Enabled": true,
-          "Components": [
-            {
-              "__type": "Sandbox.TextRenderer",
-              "__guid": "4a75c2ad-b873-406d-84b0-158d502b5360",
-              "__version": 1,
-              "BlendMode": "Normal",
-              "RenderOptions": {
-                "GameLayer": true,
-                "OverlayLayer": false,
-                "BloomLayer": false,
-                "AfterUILayer": false
+          "__Prefab": "prefabs/label.prefab",
+          "__PrefabVariables": {
+            "Text Scope": {
+              "Text": "World \u002BY",
+              "TextColor": "1,1,1,1",
+              "FontName": "Poppins",
+              "FontSize": 64,
+              "FontWeight": 400,
+              "LineHeight": 1,
+              "Outline": {
+                "Enabled": true,
+                "Size": 4,
+                "Color": "0,0,0,1"
               },
-              "Scale": 0.3,
-              "TextAlignment": "Center",
-              "TextScope": {
-                "Text": "World \u002BY",
-                "TextColor": "1,1,1,1",
-                "FontName": "Poppins",
-                "FontSize": 64,
-                "FontWeight": 400,
-                "LineHeight": 1,
-                "Outline": {
-                  "Enabled": true,
-                  "Size": 4,
-                  "Color": "0,0,0,1"
-                },
-                "Shadow": {
-                  "Enabled": true,
-                  "Size": 4,
-                  "Color": "0,0,0,1",
-                  "Offset": "4,4"
-                },
-                "OutlineUnder": {
-                  "Size": 4,
-                  "Color": "0,1,0,1"
-                },
-                "ShadowUnder": {
-                  "Size": 4,
-                  "Color": "0,0,0,1",
-                  "Offset": "4,4"
-                }
+              "Shadow": {
+                "Enabled": true,
+                "Size": 4,
+                "Color": "0,0,0,1",
+                "Offset": "4,4"
+              },
+              "OutlineUnder": {
+                "Size": 4,
+                "Color": "0,1,0,1"
+              },
+              "ShadowUnder": {
+                "Size": 4,
+                "Color": "0,0,0,1",
+                "Offset": "4,4"
               }
             },
-            {
-              "__type": "Duccsoft.LookAt",
-              "__guid": "07e8f2e2-84a5-4631-8a93-d7cd1e7f87fb",
-              "RotationOffset": "0,180,0",
-              "Target": {
-                "_type": "gameobject",
-                "go": "4aa33600-5daf-42bb-bcc3-913dbd881943"
-              },
-              "TargetMainCamera": true
-            }
-          ]
+            "Scale": 0.3
+          }
         }
       ]
     },
@@ -901,65 +747,43 @@
       ],
       "Children": [
         {
-          "__guid": "a352ec8b-2908-4886-aaed-a1cbad8d616b",
+          "__guid": "ceb855a9-7f96-423c-9439-f2e625c397b6",
           "Flags": 0,
           "Name": "Label",
           "Position": "0,0,50",
           "Enabled": true,
-          "Components": [
-            {
-              "__type": "Sandbox.TextRenderer",
-              "__guid": "7ba635ef-d0cd-4c5e-808d-6642a19657af",
-              "__version": 1,
-              "BlendMode": "Normal",
-              "RenderOptions": {
-                "GameLayer": true,
-                "OverlayLayer": false,
-                "BloomLayer": false,
-                "AfterUILayer": false
+          "__Prefab": "prefabs/label.prefab",
+          "__PrefabVariables": {
+            "Text Scope": {
+              "Text": "World \u002BZ",
+              "TextColor": "1,1,1,1",
+              "FontName": "Poppins",
+              "FontSize": 64,
+              "FontWeight": 400,
+              "LineHeight": 1,
+              "Outline": {
+                "Enabled": true,
+                "Size": 4,
+                "Color": "0,0,0,1"
               },
-              "Scale": 0.3,
-              "TextAlignment": "Center",
-              "TextScope": {
-                "Text": "World \u002BZ",
-                "TextColor": "1,1,1,1",
-                "FontName": "Poppins",
-                "FontSize": 64,
-                "FontWeight": 400,
-                "LineHeight": 1,
-                "Outline": {
-                  "Enabled": true,
-                  "Size": 4,
-                  "Color": "0,0,0,1"
-                },
-                "Shadow": {
-                  "Enabled": true,
-                  "Size": 4,
-                  "Color": "0,0,0,1",
-                  "Offset": "4,4"
-                },
-                "OutlineUnder": {
-                  "Size": 4,
-                  "Color": "0,1,0,1"
-                },
-                "ShadowUnder": {
-                  "Size": 4,
-                  "Color": "0,0,0,1",
-                  "Offset": "4,4"
-                }
+              "Shadow": {
+                "Enabled": true,
+                "Size": 4,
+                "Color": "0,0,0,1",
+                "Offset": "4,4"
+              },
+              "OutlineUnder": {
+                "Size": 4,
+                "Color": "0,1,0,1"
+              },
+              "ShadowUnder": {
+                "Size": 4,
+                "Color": "0,0,0,1",
+                "Offset": "4,4"
               }
             },
-            {
-              "__type": "Duccsoft.LookAt",
-              "__guid": "7249c599-fd32-40c3-914d-c47a26423296",
-              "RotationOffset": "0,180,0",
-              "Target": {
-                "_type": "gameobject",
-                "go": "4aa33600-5daf-42bb-bcc3-913dbd881943"
-              },
-              "TargetMainCamera": true
-            }
-          ]
+            "Scale": 0.3
+          }
         }
       ]
     },
@@ -1022,65 +846,43 @@
       ],
       "Children": [
         {
-          "__guid": "c4de7b26-5b53-437a-84b4-38cb1151b5a2",
+          "__guid": "d1d46d16-d3fd-473a-9221-d49b2073826c",
           "Flags": 0,
           "Name": "Label",
           "Position": "0,0,50",
           "Enabled": true,
-          "Components": [
-            {
-              "__type": "Sandbox.TextRenderer",
-              "__guid": "d9dee228-962e-44c1-82e5-a28eaca9fcb2",
-              "__version": 1,
-              "BlendMode": "Normal",
-              "RenderOptions": {
-                "GameLayer": true,
-                "OverlayLayer": false,
-                "BloomLayer": false,
-                "AfterUILayer": false
+          "__Prefab": "prefabs/label.prefab",
+          "__PrefabVariables": {
+            "Text Scope": {
+              "Text": "World -Z",
+              "TextColor": "1,1,1,1",
+              "FontName": "Poppins",
+              "FontSize": 64,
+              "FontWeight": 400,
+              "LineHeight": 1,
+              "Outline": {
+                "Enabled": true,
+                "Size": 4,
+                "Color": "0,0,0,1"
               },
-              "Scale": 0.3,
-              "TextAlignment": "Center",
-              "TextScope": {
-                "Text": "World -Z",
-                "TextColor": "1,1,1,1",
-                "FontName": "Poppins",
-                "FontSize": 64,
-                "FontWeight": 400,
-                "LineHeight": 1,
-                "Outline": {
-                  "Enabled": true,
-                  "Size": 4,
-                  "Color": "0,0,0,1"
-                },
-                "Shadow": {
-                  "Enabled": true,
-                  "Size": 4,
-                  "Color": "0,0,0,1",
-                  "Offset": "4,4"
-                },
-                "OutlineUnder": {
-                  "Size": 4,
-                  "Color": "0,1,0,1"
-                },
-                "ShadowUnder": {
-                  "Size": 4,
-                  "Color": "0,0,0,1",
-                  "Offset": "4,4"
-                }
+              "Shadow": {
+                "Enabled": true,
+                "Size": 4,
+                "Color": "0,0,0,1",
+                "Offset": "4,4"
+              },
+              "OutlineUnder": {
+                "Size": 4,
+                "Color": "0,1,0,1"
+              },
+              "ShadowUnder": {
+                "Size": 4,
+                "Color": "0,0,0,1",
+                "Offset": "4,4"
               }
             },
-            {
-              "__type": "Duccsoft.LookAt",
-              "__guid": "4a1c627a-8631-40bb-a957-7461837c078f",
-              "RotationOffset": "0,180,0",
-              "Target": {
-                "_type": "gameobject",
-                "go": "4aa33600-5daf-42bb-bcc3-913dbd881943"
-              },
-              "TargetMainCamera": true
-            }
-          ]
+            "Scale": 0.3
+          }
         }
       ]
     },
@@ -1145,67 +947,6 @@
       ],
       "Children": [
         {
-          "__guid": "d0651341-1b18-4525-beae-b1b626eede04",
-          "Flags": 0,
-          "Name": "Label",
-          "Position": "0,0,50",
-          "Enabled": true,
-          "Components": [
-            {
-              "__type": "Sandbox.TextRenderer",
-              "__guid": "c8f5f16c-3a50-49f8-ad0e-037534a03daa",
-              "__version": 1,
-              "BlendMode": "Normal",
-              "RenderOptions": {
-                "GameLayer": true,
-                "OverlayLayer": false,
-                "BloomLayer": false,
-                "AfterUILayer": false
-              },
-              "Scale": 0.3,
-              "TextAlignment": "Center",
-              "TextScope": {
-                "Text": "Local \u002BX",
-                "TextColor": "1,1,1,1",
-                "FontName": "Poppins",
-                "FontSize": 64,
-                "FontWeight": 400,
-                "LineHeight": 1,
-                "Outline": {
-                  "Enabled": true,
-                  "Size": 4,
-                  "Color": "0,0,0,1"
-                },
-                "Shadow": {
-                  "Enabled": true,
-                  "Size": 4,
-                  "Color": "0,0,0,1",
-                  "Offset": "4,4"
-                },
-                "OutlineUnder": {
-                  "Size": 4,
-                  "Color": "0,1,0,1"
-                },
-                "ShadowUnder": {
-                  "Size": 4,
-                  "Color": "0,0,0,1",
-                  "Offset": "4,4"
-                }
-              }
-            },
-            {
-              "__type": "Duccsoft.LookAt",
-              "__guid": "3ab2324a-c9bd-4c60-a144-182d444886b8",
-              "RotationOffset": "0,180,0",
-              "Target": {
-                "_type": "gameobject",
-                "go": "4aa33600-5daf-42bb-bcc3-913dbd881943"
-              },
-              "TargetMainCamera": true
-            }
-          ]
-        },
-        {
           "__guid": "4e60a88a-bc31-4dd0-9c4e-b0b2d52277fb",
           "Flags": 0,
           "Name": "Arrow",
@@ -1228,6 +969,45 @@
               "Tint": "1,1,1,1"
             }
           ]
+        },
+        {
+          "__guid": "6c004e2d-c6d6-4521-9440-9b430681c8f3",
+          "Flags": 0,
+          "Name": "Label",
+          "Position": "0,0,50",
+          "Enabled": true,
+          "__Prefab": "prefabs/label.prefab",
+          "__PrefabVariables": {
+            "Text Scope": {
+              "Text": "Local \u002BX",
+              "TextColor": "1,1,1,1",
+              "FontName": "Poppins",
+              "FontSize": 64,
+              "FontWeight": 400,
+              "LineHeight": 1,
+              "Outline": {
+                "Enabled": true,
+                "Size": 4,
+                "Color": "0,0,0,1"
+              },
+              "Shadow": {
+                "Enabled": true,
+                "Size": 4,
+                "Color": "0,0,0,1",
+                "Offset": "4,4"
+              },
+              "OutlineUnder": {
+                "Size": 4,
+                "Color": "0,1,0,1"
+              },
+              "ShadowUnder": {
+                "Size": 4,
+                "Color": "0,0,0,1",
+                "Offset": "4,4"
+              }
+            },
+            "Scale": 0.3
+          }
         }
       ]
     },
@@ -1292,67 +1072,6 @@
       ],
       "Children": [
         {
-          "__guid": "12ad0a84-94fd-454a-88a8-1b112cdfd86f",
-          "Flags": 0,
-          "Name": "Label",
-          "Position": "0,0,50",
-          "Enabled": true,
-          "Components": [
-            {
-              "__type": "Sandbox.TextRenderer",
-              "__guid": "26ca8cd3-f6d6-49e0-b1e6-bca45122dd09",
-              "__version": 1,
-              "BlendMode": "Normal",
-              "RenderOptions": {
-                "GameLayer": true,
-                "OverlayLayer": false,
-                "BloomLayer": false,
-                "AfterUILayer": false
-              },
-              "Scale": 0.3,
-              "TextAlignment": "Center",
-              "TextScope": {
-                "Text": "Local -X",
-                "TextColor": "1,1,1,1",
-                "FontName": "Poppins",
-                "FontSize": 64,
-                "FontWeight": 400,
-                "LineHeight": 1,
-                "Outline": {
-                  "Enabled": true,
-                  "Size": 4,
-                  "Color": "0,0,0,1"
-                },
-                "Shadow": {
-                  "Enabled": true,
-                  "Size": 4,
-                  "Color": "0,0,0,1",
-                  "Offset": "4,4"
-                },
-                "OutlineUnder": {
-                  "Size": 4,
-                  "Color": "0,1,0,1"
-                },
-                "ShadowUnder": {
-                  "Size": 4,
-                  "Color": "0,0,0,1",
-                  "Offset": "4,4"
-                }
-              }
-            },
-            {
-              "__type": "Duccsoft.LookAt",
-              "__guid": "c3c4417f-6381-40f5-8ff5-fe94e2b74b17",
-              "RotationOffset": "0,180,0",
-              "Target": {
-                "_type": "gameobject",
-                "go": "4aa33600-5daf-42bb-bcc3-913dbd881943"
-              },
-              "TargetMainCamera": true
-            }
-          ]
-        },
-        {
           "__guid": "8f67d793-7f91-484f-b85c-d8379f406dd0",
           "Flags": 0,
           "Name": "Arrow",
@@ -1375,6 +1094,45 @@
               "Tint": "1,1,1,1"
             }
           ]
+        },
+        {
+          "__guid": "4fc66a96-1fb6-48a4-a783-cbccf4db52b2",
+          "Flags": 0,
+          "Name": "Label",
+          "Position": "0,0,50",
+          "Enabled": true,
+          "__Prefab": "prefabs/label.prefab",
+          "__PrefabVariables": {
+            "Text Scope": {
+              "Text": "Local -X",
+              "TextColor": "1,1,1,1",
+              "FontName": "Poppins",
+              "FontSize": 64,
+              "FontWeight": 400,
+              "LineHeight": 1,
+              "Outline": {
+                "Enabled": true,
+                "Size": 4,
+                "Color": "0,0,0,1"
+              },
+              "Shadow": {
+                "Enabled": true,
+                "Size": 4,
+                "Color": "0,0,0,1",
+                "Offset": "4,4"
+              },
+              "OutlineUnder": {
+                "Size": 4,
+                "Color": "0,1,0,1"
+              },
+              "ShadowUnder": {
+                "Size": 4,
+                "Color": "0,0,0,1",
+                "Offset": "4,4"
+              }
+            },
+            "Scale": 0.3
+          }
         }
       ]
     },
@@ -1444,65 +1202,43 @@
       ],
       "Children": [
         {
-          "__guid": "b69dd084-de4c-47ba-8032-9ecea94ca4d3",
+          "__guid": "e44b57b8-fdcd-4b9b-921b-5af858e15fec",
           "Flags": 0,
           "Name": "Label",
           "Position": "0,0,50",
           "Enabled": true,
-          "Components": [
-            {
-              "__type": "Sandbox.TextRenderer",
-              "__guid": "c2307d05-0f84-4116-9744-fb212309391f",
-              "__version": 1,
-              "BlendMode": "Normal",
-              "RenderOptions": {
-                "GameLayer": true,
-                "OverlayLayer": false,
-                "BloomLayer": false,
-                "AfterUILayer": false
+          "__Prefab": "prefabs/label.prefab",
+          "__PrefabVariables": {
+            "Text Scope": {
+              "Text": "Pursuer (\u002BY)",
+              "TextColor": "1,1,1,1",
+              "FontName": "Poppins",
+              "FontSize": 64,
+              "FontWeight": 400,
+              "LineHeight": 1,
+              "Outline": {
+                "Enabled": true,
+                "Size": 4,
+                "Color": "0,0,0,1"
               },
-              "Scale": 0.3,
-              "TextAlignment": "Center",
-              "TextScope": {
-                "Text": "Pursuer (\u002BY)",
-                "TextColor": "1,1,1,1",
-                "FontName": "Poppins",
-                "FontSize": 64,
-                "FontWeight": 400,
-                "LineHeight": 1,
-                "Outline": {
-                  "Enabled": true,
-                  "Size": 4,
-                  "Color": "0,0,0,1"
-                },
-                "Shadow": {
-                  "Enabled": true,
-                  "Size": 4,
-                  "Color": "0,0,0,1",
-                  "Offset": "4,4"
-                },
-                "OutlineUnder": {
-                  "Size": 4,
-                  "Color": "0,1,0,1"
-                },
-                "ShadowUnder": {
-                  "Size": 4,
-                  "Color": "0,0,0,1",
-                  "Offset": "4,4"
-                }
+              "Shadow": {
+                "Enabled": true,
+                "Size": 4,
+                "Color": "0,0,0,1",
+                "Offset": "4,4"
+              },
+              "OutlineUnder": {
+                "Size": 4,
+                "Color": "0,1,0,1"
+              },
+              "ShadowUnder": {
+                "Size": 4,
+                "Color": "0,0,0,1",
+                "Offset": "4,4"
               }
             },
-            {
-              "__type": "Duccsoft.LookAt",
-              "__guid": "99fa7ff7-636e-4b35-9ce6-00448c271d09",
-              "RotationOffset": "0,180,0",
-              "Target": {
-                "_type": "gameobject",
-                "go": "4aa33600-5daf-42bb-bcc3-913dbd881943"
-              },
-              "TargetMainCamera": true
-            }
-          ]
+            "Scale": 0.3
+          }
         }
       ]
     },
@@ -1572,65 +1308,43 @@
       ],
       "Children": [
         {
-          "__guid": "db1f8241-d67e-480c-9cdb-029005e850b4",
+          "__guid": "acbb7d09-c397-42de-a1b4-fb5793c0e789",
           "Flags": 0,
           "Name": "Label",
           "Position": "0,0,50",
           "Enabled": true,
-          "Components": [
-            {
-              "__type": "Sandbox.TextRenderer",
-              "__guid": "a5a1cf66-fd30-4c46-b8f7-ef64757b9284",
-              "__version": 1,
-              "BlendMode": "Normal",
-              "RenderOptions": {
-                "GameLayer": true,
-                "OverlayLayer": false,
-                "BloomLayer": false,
-                "AfterUILayer": false
+          "__Prefab": "prefabs/label.prefab",
+          "__PrefabVariables": {
+            "Text Scope": {
+              "Text": "Pursuer (Evader)",
+              "TextColor": "1,1,1,1",
+              "FontName": "Poppins",
+              "FontSize": 64,
+              "FontWeight": 400,
+              "LineHeight": 1,
+              "Outline": {
+                "Enabled": true,
+                "Size": 4,
+                "Color": "0,0,0,1"
               },
-              "Scale": 0.3,
-              "TextAlignment": "Center",
-              "TextScope": {
-                "Text": "Pursuer (Evader)",
-                "TextColor": "1,1,1,1",
-                "FontName": "Poppins",
-                "FontSize": 64,
-                "FontWeight": 400,
-                "LineHeight": 1,
-                "Outline": {
-                  "Enabled": true,
-                  "Size": 4,
-                  "Color": "0,0,0,1"
-                },
-                "Shadow": {
-                  "Enabled": true,
-                  "Size": 4,
-                  "Color": "0,0,0,1",
-                  "Offset": "4,4"
-                },
-                "OutlineUnder": {
-                  "Size": 4,
-                  "Color": "0,1,0,1"
-                },
-                "ShadowUnder": {
-                  "Size": 4,
-                  "Color": "0,0,0,1",
-                  "Offset": "4,4"
-                }
+              "Shadow": {
+                "Enabled": true,
+                "Size": 4,
+                "Color": "0,0,0,1",
+                "Offset": "4,4"
+              },
+              "OutlineUnder": {
+                "Size": 4,
+                "Color": "0,1,0,1"
+              },
+              "ShadowUnder": {
+                "Size": 4,
+                "Color": "0,0,0,1",
+                "Offset": "4,4"
               }
             },
-            {
-              "__type": "Duccsoft.LookAt",
-              "__guid": "ac4ed2e1-c388-47c2-a284-aadfd900ad0e",
-              "RotationOffset": "0,180,0",
-              "Target": {
-                "_type": "gameobject",
-                "go": "4aa33600-5daf-42bb-bcc3-913dbd881943"
-              },
-              "TargetMainCamera": true
-            }
-          ]
+            "Scale": 0.3
+          }
         }
       ]
     },
@@ -1700,65 +1414,43 @@
       ],
       "Children": [
         {
-          "__guid": "811d886c-9a95-4ae4-a275-026da19c6bb1",
+          "__guid": "37aa3a0b-f8e0-4a9f-a93c-797ea3bae46b",
           "Flags": 0,
           "Name": "Label",
           "Position": "0,0,50",
           "Enabled": true,
-          "Components": [
-            {
-              "__type": "Sandbox.TextRenderer",
-              "__guid": "b09ac316-9a11-4433-ac99-68918557fc07",
-              "__version": 1,
-              "BlendMode": "Normal",
-              "RenderOptions": {
-                "GameLayer": true,
-                "OverlayLayer": false,
-                "BloomLayer": false,
-                "AfterUILayer": false
+          "__Prefab": "prefabs/label.prefab",
+          "__PrefabVariables": {
+            "Text Scope": {
+              "Text": "Pursuer (Strafer)",
+              "TextColor": "1,1,1,1",
+              "FontName": "Poppins",
+              "FontSize": 64,
+              "FontWeight": 400,
+              "LineHeight": 1,
+              "Outline": {
+                "Enabled": true,
+                "Size": 4,
+                "Color": "0,0,0,1"
               },
-              "Scale": 0.3,
-              "TextAlignment": "Center",
-              "TextScope": {
-                "Text": "Pursuer (Strafer)",
-                "TextColor": "1,1,1,1",
-                "FontName": "Poppins",
-                "FontSize": 64,
-                "FontWeight": 400,
-                "LineHeight": 1,
-                "Outline": {
-                  "Enabled": true,
-                  "Size": 4,
-                  "Color": "0,0,0,1"
-                },
-                "Shadow": {
-                  "Enabled": true,
-                  "Size": 4,
-                  "Color": "0,0,0,1",
-                  "Offset": "4,4"
-                },
-                "OutlineUnder": {
-                  "Size": 4,
-                  "Color": "0,1,0,1"
-                },
-                "ShadowUnder": {
-                  "Size": 4,
-                  "Color": "0,0,0,1",
-                  "Offset": "4,4"
-                }
+              "Shadow": {
+                "Enabled": true,
+                "Size": 4,
+                "Color": "0,0,0,1",
+                "Offset": "4,4"
+              },
+              "OutlineUnder": {
+                "Size": 4,
+                "Color": "0,1,0,1"
+              },
+              "ShadowUnder": {
+                "Size": 4,
+                "Color": "0,0,0,1",
+                "Offset": "4,4"
               }
             },
-            {
-              "__type": "Duccsoft.LookAt",
-              "__guid": "2bed5170-0624-46ac-968c-64953abd22b1",
-              "RotationOffset": "0,180,0",
-              "Target": {
-                "_type": "gameobject",
-                "go": "4aa33600-5daf-42bb-bcc3-913dbd881943"
-              },
-              "TargetMainCamera": true
-            }
-          ]
+            "Scale": 0.3
+          }
         }
       ]
     },
@@ -1827,65 +1519,43 @@
       ],
       "Children": [
         {
-          "__guid": "e8363659-1fea-4a88-b99b-eccce895f0c8",
+          "__guid": "0096b709-9343-432c-8f57-c094ee782b1b",
           "Flags": 0,
           "Name": "Label",
           "Position": "0,0,50",
           "Enabled": true,
-          "Components": [
-            {
-              "__type": "Sandbox.TextRenderer",
-              "__guid": "17ba1b2c-4395-4773-844f-d96c8e630d7a",
-              "__version": 1,
-              "BlendMode": "Normal",
-              "RenderOptions": {
-                "GameLayer": true,
-                "OverlayLayer": false,
-                "BloomLayer": false,
-                "AfterUILayer": false
+          "__Prefab": "prefabs/label.prefab",
+          "__PrefabVariables": {
+            "Text Scope": {
+              "Text": "Evader",
+              "TextColor": "1,1,1,1",
+              "FontName": "Poppins",
+              "FontSize": 64,
+              "FontWeight": 400,
+              "LineHeight": 1,
+              "Outline": {
+                "Enabled": true,
+                "Size": 4,
+                "Color": "0,0,0,1"
               },
-              "Scale": 0.3,
-              "TextAlignment": "Center",
-              "TextScope": {
-                "Text": "Evader",
-                "TextColor": "1,1,1,1",
-                "FontName": "Poppins",
-                "FontSize": 64,
-                "FontWeight": 400,
-                "LineHeight": 1,
-                "Outline": {
-                  "Enabled": true,
-                  "Size": 4,
-                  "Color": "0,0,0,1"
-                },
-                "Shadow": {
-                  "Enabled": true,
-                  "Size": 4,
-                  "Color": "0,0,0,1",
-                  "Offset": "4,4"
-                },
-                "OutlineUnder": {
-                  "Size": 4,
-                  "Color": "0,1,0,1"
-                },
-                "ShadowUnder": {
-                  "Size": 4,
-                  "Color": "0,0,0,1",
-                  "Offset": "4,4"
-                }
+              "Shadow": {
+                "Enabled": true,
+                "Size": 4,
+                "Color": "0,0,0,1",
+                "Offset": "4,4"
+              },
+              "OutlineUnder": {
+                "Size": 4,
+                "Color": "0,1,0,1"
+              },
+              "ShadowUnder": {
+                "Size": 4,
+                "Color": "0,0,0,1",
+                "Offset": "4,4"
               }
             },
-            {
-              "__type": "Duccsoft.LookAt",
-              "__guid": "86c8aa92-a0ff-4f5e-91a8-679e2e20bfc3",
-              "RotationOffset": "0,180,0",
-              "Target": {
-                "_type": "gameobject",
-                "go": "4aa33600-5daf-42bb-bcc3-913dbd881943"
-              },
-              "TargetMainCamera": true
-            }
-          ]
+            "Scale": 0.3
+          }
         }
       ]
     },
@@ -1954,65 +1624,43 @@
       ],
       "Children": [
         {
-          "__guid": "de4826a6-22a1-4a54-8b25-40e96ffd5a1b",
+          "__guid": "06088f1a-ab0c-44eb-ad6e-77dff3d5cd6a",
           "Flags": 0,
-          "Name": "Label",
+          "Name": "Strafer",
           "Position": "0,0,50",
           "Enabled": true,
-          "Components": [
-            {
-              "__type": "Sandbox.TextRenderer",
-              "__guid": "b4899cde-9d19-459d-9f41-859fd6ec2aec",
-              "__version": 1,
-              "BlendMode": "Normal",
-              "RenderOptions": {
-                "GameLayer": true,
-                "OverlayLayer": false,
-                "BloomLayer": false,
-                "AfterUILayer": false
+          "__Prefab": "prefabs/label.prefab",
+          "__PrefabVariables": {
+            "Text Scope": {
+              "Text": "Strafer",
+              "TextColor": "1,1,1,1",
+              "FontName": "Poppins",
+              "FontSize": 64,
+              "FontWeight": 400,
+              "LineHeight": 1,
+              "Outline": {
+                "Enabled": true,
+                "Size": 4,
+                "Color": "0,0,0,1"
               },
-              "Scale": 0.3,
-              "TextAlignment": "Center",
-              "TextScope": {
-                "Text": "Strafer",
-                "TextColor": "1,1,1,1",
-                "FontName": "Poppins",
-                "FontSize": 64,
-                "FontWeight": 400,
-                "LineHeight": 1,
-                "Outline": {
-                  "Enabled": true,
-                  "Size": 4,
-                  "Color": "0,0,0,1"
-                },
-                "Shadow": {
-                  "Enabled": true,
-                  "Size": 4,
-                  "Color": "0,0,0,1",
-                  "Offset": "4,4"
-                },
-                "OutlineUnder": {
-                  "Size": 4,
-                  "Color": "0,1,0,1"
-                },
-                "ShadowUnder": {
-                  "Size": 4,
-                  "Color": "0,0,0,1",
-                  "Offset": "4,4"
-                }
+              "Shadow": {
+                "Enabled": true,
+                "Size": 4,
+                "Color": "0,0,0,1",
+                "Offset": "4,4"
+              },
+              "OutlineUnder": {
+                "Size": 4,
+                "Color": "0,1,0,1"
+              },
+              "ShadowUnder": {
+                "Size": 4,
+                "Color": "0,0,0,1",
+                "Offset": "4,4"
               }
             },
-            {
-              "__type": "Duccsoft.LookAt",
-              "__guid": "64ce723a-39e7-46b7-8bf9-cc074490f291",
-              "RotationOffset": "0,180,0",
-              "Target": {
-                "_type": "gameobject",
-                "go": "4aa33600-5daf-42bb-bcc3-913dbd881943"
-              },
-              "TargetMainCamera": true
-            }
-          ]
+            "Scale": 0.3
+          }
         }
       ]
     }
