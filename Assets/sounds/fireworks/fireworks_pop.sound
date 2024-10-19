@@ -1,0 +1,21 @@
+{
+  "UI": false,
+  "Volume": "20",
+  "Pitch": "1",
+  "Decibels": 70,
+  "SelectionMode": "Random",
+  "Sounds": [
+    "sounds/fireworks/pop_1.vsnd",
+    "sounds/fireworks/pop_2.vsnd",
+    "sounds/fireworks/pop_3.vsnd",
+    "sounds/fireworks/pop_4.vsnd",
+    "sounds/fireworks/pop_5.vsnd"
+  ],
+  "Occlusion": true,
+  "AirAbsorption": true,
+  "Transmission": true,
+  "OcclusionRadius": 64,
+  "DistanceAttenuation": true,
+  "__references": [],
+  "__version": 0
+}

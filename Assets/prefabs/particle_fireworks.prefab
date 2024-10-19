@@ -1,0 +1,379 @@
+{
+  "RootObject": {
+    "__guid": "2ec4f239-5576-4a6a-98af-14580ffe01c6",
+    "Flags": 0,
+    "Name": "particle_fireworks",
+    "Components": [
+      {
+        "__type": "Duccsoft.SelfDestruct",
+        "__guid": "88f5265c-3802-4940-b413-66975703b91c",
+        "Delay": 1
+      },
+      {
+        "__type": "Sandbox.ActionGraphs.ActionsInvoker",
+        "__guid": "0caa98c2-1aff-4ba4-8b52-acd8ebff654f",
+        "OnEnabledAction": {
+          "__version": 8,
+          "__guid": "4cef961a-aaad-4356-ba52-cfa6da09798a",
+          "__changeId": 34,
+          "UserData": {
+            "Title": "On Enabled Action",
+            "ReferencedComponentTypes": []
+          },
+          "Variables": [],
+          "Nodes": [
+            {
+              "Id": 0,
+              "Type": "input"
+            },
+            {
+              "Id": 2,
+              "Type": "scene.ref",
+              "UserData": {
+                "Position": "60,48"
+              }
+            },
+            {
+              "Id": 3,
+              "Type": "property",
+              "Properties": {
+                "_name": "Tint",
+                "_type": "Sandbox.ParticleEffect"
+              },
+              "UserData": {
+                "Position": "396,0"
+              }
+            },
+            {
+              "Id": 4,
+              "Type": "color.new",
+              "UserData": {
+                "Position": "-108,192"
+              }
+            },
+            {
+              "Id": 14,
+              "Type": "call",
+              "Properties": {
+                "_isStatic": false,
+                "_name": "AdjustHue",
+                "_type": "Color"
+              },
+              "UserData": {
+                "Position": "204,192"
+              }
+            },
+            {
+              "Id": 15,
+              "Type": "random.float",
+              "UserData": {
+                "Position": "60,192"
+              }
+            }
+          ],
+          "Links": [
+            {
+              "SrcId": 0,
+              "SrcName": "_signal",
+              "DstId": 3,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 2,
+              "SrcName": "_result",
+              "DstId": 3,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 14,
+              "SrcName": "_result",
+              "DstId": 3,
+              "DstName": "_value"
+            },
+            {
+              "Id": 30,
+              "Value": 20,
+              "DstId": 4,
+              "DstName": "b"
+            },
+            {
+              "Id": 31,
+              "Value": 20,
+              "DstId": 4,
+              "DstName": "g"
+            },
+            {
+              "Id": 32,
+              "Value": 220,
+              "DstId": 4,
+              "DstName": "r"
+            },
+            {
+              "SrcId": 4,
+              "SrcName": "_result",
+              "DstId": 14,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 15,
+              "SrcName": "_result",
+              "DstId": 14,
+              "DstName": "amount"
+            },
+            {
+              "Id": 33,
+              "Value": 360,
+              "DstId": 15,
+              "DstName": "max"
+            }
+          ],
+          "Defaults": {
+            "$2.component": {
+              "_type": "component",
+              "component_id": "31b2cb1b-3e5a-4ca4-aaf9-b716deb5e10f",
+              "go": "9b373d62-c404-4ecf-a55c-7f996d0d3fde",
+              "component_type": "ParticleEffect"
+            }
+          }
+        }
+      }
+    ],
+    "Children": [
+      {
+        "__guid": "9b373d62-c404-4ecf-a55c-7f996d0d3fde",
+        "Flags": 0,
+        "Name": "Burst",
+        "Tags": "particles",
+        "Enabled": true,
+        "Components": [
+          {
+            "__type": "Sandbox.ParticleEffect",
+            "__guid": "31b2cb1b-3e5a-4ca4-aaf9-b716deb5e10f",
+            "__version": 1,
+            "Alpha": {
+              "Type": "Curve",
+              "CurveA": [
+                {},
+                {
+                  "x": 0.071428575,
+                  "y": 0.010143929
+                },
+                {
+                  "x": 0.1279762,
+                  "y": 0.98138297,
+                  "in": -0.10256463,
+                  "out": 0.10256463
+                },
+                {
+                  "x": 0.67113096,
+                  "y": 0.100472555,
+                  "in": 1.0509301,
+                  "out": -1.0509301
+                },
+                {
+                  "x": 1,
+                  "in": 0.06521747,
+                  "out": -0.06521747
+                }
+              ],
+              "Constants": "1,0,0,0"
+            },
+            "ApplyAlpha": true,
+            "ApplyColor": true,
+            "ApplyRotation": true,
+            "ApplyShape": true,
+            "Bounce": {
+              "Constants": "0.01,0,0,0"
+            },
+            "Brightness": {
+              "Constants": "5,0,0,0"
+            },
+            "Bumpiness": {
+              "Constants": "0.8,0,0,0"
+            },
+            "Collision": true,
+            "CollisionIgnore": "particle",
+            "CollisionRadius": 1,
+            "Damping": {},
+            "DieOnCollisionChance": {
+              "Evaluation": "Particle",
+              "Constants": "0.2,0,0,0"
+            },
+            "Force": false,
+            "ForceDirection": "0,0,0",
+            "ForceScale": {
+              "Type": "Range",
+              "Evaluation": "Particle",
+              "Constants": "0.2,0.6,0,0"
+            },
+            "Friction": {
+              "Constants": "1,0,0,0"
+            },
+            "Gradient": {
+              "Evaluation": "Particle",
+              "GradientA": {
+                "color": [
+                  {
+                    "t": 0.012820513,
+                    "c": "0.00456,0.05341,0.9814,1"
+                  },
+                  {
+                    "t": 0.51282054,
+                    "c": "0.78603,0.9814,0.00456,1"
+                  },
+                  {
+                    "t": 1,
+                    "c": "0.9814,0.00456,0.00456,1"
+                  }
+                ],
+                "alpha": []
+              },
+              "GradientB": {
+                "color": [
+                  {
+                    "t": 0.5,
+                    "c": "1,1,1,1"
+                  }
+                ],
+                "alpha": []
+              },
+              "ConstantA": "1,1,1,1",
+              "ConstantB": "0.00844,0.60746,0.90698,1"
+            },
+            "Lifetime": {
+              "Constants": "1,0,0,0"
+            },
+            "MaxParticles": 1000,
+            "OrbitalForce": {},
+            "OrbitalPull": {},
+            "PerParticleTimeScale": {
+              "Constants": "1,0,0,0"
+            },
+            "Pitch": {},
+            "PreWarm": 0,
+            "PushStrength": {},
+            "Roll": {
+              "Type": "Range",
+              "Evaluation": "Particle",
+              "CurveA": [
+                {
+                  "x": 0.5,
+                  "y": 0.5
+                }
+              ],
+              "Constants": "0,1,0,0"
+            },
+            "Scale": {
+              "Constants": "1,2,0,0"
+            },
+            "SequenceId": {},
+            "SequenceSpeed": {
+              "Constants": "1,0,0,0"
+            },
+            "SequenceTime": {
+              "Constants": "1,0,0,0"
+            },
+            "SheetSequence": false,
+            "Space": "World",
+            "StartDelay": {},
+            "StartVelocity": {
+              "Type": "Range",
+              "Evaluation": "Particle",
+              "Constants": "0,300,0,0"
+            },
+            "Stretch": {
+              "Type": "Range",
+              "Evaluation": "Particle",
+              "Constants": "0,0.5,0,0"
+            },
+            "TimeScale": 1,
+            "Tint": "1,1,1,1",
+            "Yaw": {}
+          },
+          {
+            "__type": "Sandbox.ParticleSphereEmitter",
+            "__guid": "603f505f-22b9-439b-9459-7e892e73f30e",
+            "Burst": 256,
+            "Delay": 0,
+            "DestroyOnEnd": false,
+            "Duration": 2,
+            "Loop": true,
+            "OnEdge": true,
+            "Radius": 2.95,
+            "Rate": 0,
+            "RateOverDistance": 0,
+            "Velocity": 300
+          },
+          {
+            "__type": "Sandbox.ParticleSpriteRenderer",
+            "__guid": "1c167124-c73f-4a40-87d5-c19d3d6e5e71",
+            "Additive": false,
+            "Alignment": "LookAtCamera",
+            "BlurAmount": 1,
+            "BlurOpacity": 0.6,
+            "BlurSpacing": 1,
+            "DepthFeather": 0,
+            "FaceVelocity": true,
+            "FogStrength": 1,
+            "LeadingTrail": true,
+            "Lighting": false,
+            "MotionBlur": true,
+            "Opaque": false,
+            "RenderOptions": {
+              "GameLayer": true,
+              "OverlayLayer": false,
+              "BloomLayer": false,
+              "AfterUILayer": false
+            },
+            "RotationOffset": 0,
+            "Scale": 1,
+            "Shadows": false,
+            "SortMode": "Unsorted",
+            "Texture": "materials/particle/snow.vtex"
+          }
+        ]
+      },
+      {
+        "__guid": "ed45f90f-49f3-411d-ae0d-ab02776f4384",
+        "Flags": 0,
+        "Name": "Sound",
+        "Enabled": true,
+        "Components": [
+          {
+            "__type": "Sandbox.SoundPointComponent",
+            "__guid": "2e022cbe-1090-4e71-a585-5785e5ba6b47",
+            "DistanceAttenuation": false,
+            "DistanceAttenuationOverride": false,
+            "Force2d": false,
+            "MaxRepeatTime": 1,
+            "MinRepeatTime": 1,
+            "Occlusion": false,
+            "OcclusionOverride": false,
+            "OcclusionRadius": 32,
+            "Pitch": 1,
+            "PlayOnStart": true,
+            "ReflectionOverride": false,
+            "Reflections": false,
+            "Repeat": false,
+            "SoundEvent": "sounds/fireworks/fireworks_pop.sound",
+            "SoundOverride": false,
+            "StopOnNew": false,
+            "TargetMixer": {
+              "Name": "explosion",
+              "Id": "da4a50df-7397-4892-b34b-8e06007b685d"
+            },
+            "Volume": 1
+          }
+        ]
+      }
+    ],
+    "__variables": []
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "DontBreakAsTemplate": false,
+  "ResourceVersion": 1,
+  "__references": [],
+  "__version": 1
+}

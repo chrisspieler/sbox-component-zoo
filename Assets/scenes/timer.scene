@@ -2,23 +2,47 @@
   "__guid": "d93f7c13-ceb4-48cc-ad28-1118a700f07a",
   "GameObjects": [
     {
-      "__guid": "d348d79a-641f-40f3-8f1a-226f14ee756f",
-      "Flags": 0,
-      "Name": "Camera",
-      "Position": "-64,-0.00000658081,64",
-      "Rotation": "0,0.3826834,0,0.9238796",
-      "Tags": "maincamera",
-      "Enabled": true,
-      "__Prefab": "prefabs/camera.prefab",
-      "__PrefabVariables": {}
-    },
-    {
       "__guid": "33319383-dab8-4adc-ad1b-9970bcbac757",
       "Flags": 0,
       "Name": "environment",
       "Enabled": true,
-      "__Prefab": "prefabs/environment.prefab",
-      "__PrefabVariables": {}
+      "Children": [
+        {
+          "__guid": "a2ff9704-1766-49ed-adc1-b6277f97d6d3",
+          "Flags": 0,
+          "Name": "Sun",
+          "Rotation": "0.3659981,0.2113092,-0.7848855,0.4531539",
+          "Tags": "light_directional,light",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.DirectionalLight",
+              "__guid": "a92c674a-6922-4359-96c5-5ecf9c669a83",
+              "FogMode": "Enabled",
+              "FogStrength": 1,
+              "LightColor": "0.19314,0.21623,0.22326,1",
+              "Shadows": true,
+              "SkyColor": "0,0,0,0"
+            }
+          ]
+        },
+        {
+          "__guid": "404fdd3a-9ac5-48bf-b85a-4c92fe65bedc",
+          "Flags": 0,
+          "Name": "2D Skybox",
+          "Tags": "skybox",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.SkyBox2D",
+              "__guid": "eb78dc88-52e0-4a3e-b598-1acabbd33887",
+              "SkyIndirectLighting": true,
+              "SkyMaterial": "materials/skybox/light_test_default.vmat",
+              "Tint": "0.14884,0.14884,0.14884,1"
+            }
+          ]
+        }
+      ]
     },
     {
       "__guid": "5a384c3b-0434-42bb-8844-813b410a56a5",
@@ -31,10 +55,10 @@
           "__type": "Duccsoft.TimerComponent",
           "__guid": "c1be12b3-26c3-4d2e-9077-3209acbb87a6",
           "AutoRepeat": false,
-          "ElapsedSeconds": 4972.656,
+          "ElapsedSeconds": 8806.204,
           "HasFired": false,
-          "IntervalSeconds": 1,
-          "RealElapsedSeconds": 88296630,
+          "IntervalSeconds": "1",
+          "RealElapsedSeconds": 88300460,
           "UseRealTime": false
         }
       ]
@@ -44,12 +68,14 @@
       "Flags": 0,
       "Name": "Plane",
       "Rotation": "0,0,1,0.0000001947072",
+      "Scale": "1,5,1",
       "Enabled": true,
       "Components": [
         {
           "__type": "Sandbox.ModelRenderer",
           "__guid": "d3ca52a5-8f1b-4b45-9d9b-dba6c162181e",
           "BodyGroups": 18446744073709551615,
+          "MaterialOverride": "materials/dev/dev_nonmetal_rough40.vmat",
           "Model": "models/dev/plane.vmdl",
           "RenderOptions": {
             "GameLayer": true,
@@ -58,7 +84,15 @@
             "AfterUILayer": false
           },
           "RenderType": "On",
-          "Tint": "1,1,1,1"
+          "Tint": "0.03721,0.03721,0.03721,1"
+        },
+        {
+          "__type": "Sandbox.PlaneCollider",
+          "__guid": "4af23382-ccc0-47aa-be2b-48b58c57ef5f",
+          "Center": "0,0,0",
+          "IsTrigger": false,
+          "Scale": "100,100",
+          "Static": true
         }
       ]
     },
@@ -191,16 +225,10 @@
                 "DstName": "a"
               },
               {
-                "Id": 6,
+                "Id": 20,
                 "Value": 0,
                 "DstId": 4,
                 "DstName": "b"
-              },
-              {
-                "SrcId": 4,
-                "SrcName": "_result",
-                "DstId": 5,
-                "DstName": "_target"
               },
               {
                 "SrcId": 3,
@@ -215,7 +243,7 @@
                 "DstName": "_target"
               },
               {
-                "Id": 12,
+                "Id": 21,
                 "Value": false,
                 "DstId": 8,
                 "DstName": "_value"
@@ -339,9 +367,9 @@
           "__type": "Duccsoft.TimerComponent",
           "__guid": "af4bd9d5-1c8e-40b7-a80c-e3e84dba7158",
           "AutoRepeat": true,
-          "ElapsedSeconds": 4972.656,
+          "ElapsedSeconds": 8806.204,
           "HasFired": false,
-          "IntervalSeconds": 0.2,
+          "IntervalSeconds": "0.35",
           "OnFire": {
             "__version": 8,
             "__guid": "86517b98-44c1-4d5b-88ab-b0ea3a311ae9",
@@ -399,7 +427,7 @@
               }
             }
           },
-          "RealElapsedSeconds": 88296630,
+          "RealElapsedSeconds": 88300460,
           "UseRealTime": false
         }
       ],
@@ -590,6 +618,630 @@
           ]
         }
       ]
+    },
+    {
+      "__guid": "71451c81-5c2d-4364-ba49-dbe38ad99e1c",
+      "Flags": 0,
+      "Name": "ducc",
+      "Position": "-4,-32.00001,0",
+      "Rotation": "-0.0000005352838,-0.000001292289,0.9238796,-0.3826833",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "aa49c6ab-250e-4325-925c-58e73ec99cb1",
+          "BodyGroups": 18446744073709551615,
+          "Model": "models/duck_decoration/duck_decoration.vmdl",
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "Duccsoft.TimerComponent",
+          "__guid": "c2fef509-0082-4335-a476-1816df79347c",
+          "AutoRepeat": false,
+          "ElapsedSeconds": 8422.182,
+          "HasFired": false,
+          "IntervalSeconds": "3",
+          "LastFireRealSeconds": 0.1463455,
+          "LastFireSeconds": 0.15060425,
+          "OnFire": {
+            "__version": 8,
+            "__guid": "26e8d54d-1c2f-4b9a-8b0b-598404278255",
+            "__changeId": 59,
+            "UserData": {
+              "Title": "On Fire",
+              "ReferencedComponentTypes": []
+            },
+            "Variables": [],
+            "Nodes": [
+              {
+                "Id": 0,
+                "Type": "input",
+                "UserData": {
+                  "Position": "132,-144"
+                }
+              },
+              {
+                "Id": 5,
+                "Type": "scene.ref",
+                "UserData": {
+                  "Position": "-0,-96"
+                }
+              },
+              {
+                "Id": 9,
+                "Type": "property",
+                "Properties": {
+                  "_name": "Transform",
+                  "_type": "Sandbox.GameObject"
+                },
+                "UserData": {
+                  "Position": "132,-60"
+                }
+              },
+              {
+                "Id": 18,
+                "Type": "property",
+                "Properties": {
+                  "_name": "World",
+                  "_type": "Sandbox.GameTransform"
+                },
+                "UserData": {
+                  "Position": "444,0"
+                }
+              },
+              {
+                "Id": 19,
+                "Type": "call",
+                "Properties": {
+                  "_isStatic": false,
+                  "_name": "RotateAround",
+                  "_type": "Transform"
+                },
+                "UserData": {
+                  "Position": "696,-12"
+                }
+              },
+              {
+                "Id": 20,
+                "Type": "call",
+                "Properties": {
+                  "_isStatic": false,
+                  "_name": "GetBounds",
+                  "_type": "Sandbox.GameObject"
+                },
+                "UserData": {
+                  "Position": "324,36"
+                }
+              },
+              {
+                "Id": 21,
+                "Type": "property",
+                "Properties": {
+                  "_name": "Center",
+                  "_type": "BBox"
+                },
+                "UserData": {
+                  "Position": "492,36"
+                }
+              },
+              {
+                "Id": 26,
+                "Type": "property",
+                "Properties": {
+                  "_name": "World",
+                  "_type": "Sandbox.GameTransform"
+                },
+                "UserData": {
+                  "Position": "492,-144"
+                }
+              },
+              {
+                "Id": 28,
+                "Type": "scene.ref",
+                "UserData": {
+                  "Position": "624,-252"
+                }
+              },
+              {
+                "Id": 29,
+                "Type": "call",
+                "Properties": {
+                  "_isStatic": false,
+                  "_name": "StartSound",
+                  "_type": "Sandbox.SoundPointComponent"
+                },
+                "UserData": {
+                  "Position": "768,-144"
+                }
+              }
+            ],
+            "Links": [
+              {
+                "SrcId": 5,
+                "SrcName": "_result",
+                "DstId": 9,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 9,
+                "SrcName": "_result",
+                "DstId": 18,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 18,
+                "SrcName": "_result",
+                "DstId": 19,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 21,
+                "SrcName": "_result",
+                "DstId": 19,
+                "DstName": "center"
+              },
+              {
+                "Id": 24,
+                "Value": "1,0,-0,-0.00000004371139",
+                "DstId": 19,
+                "DstName": "rot"
+              },
+              {
+                "SrcId": 0,
+                "SrcName": "_target",
+                "DstId": 20,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 20,
+                "SrcName": "_result",
+                "DstId": 21,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 0,
+                "SrcName": "_signal",
+                "DstId": 26,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 9,
+                "SrcName": "_result",
+                "DstId": 26,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 19,
+                "SrcName": "_result",
+                "DstId": 26,
+                "DstName": "_value"
+              },
+              {
+                "SrcId": 26,
+                "SrcName": "_signal",
+                "DstId": 29,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 28,
+                "SrcName": "_result",
+                "DstId": 29,
+                "DstName": "_target"
+              }
+            ],
+            "Defaults": {
+              "$5.gameobject": {
+                "_type": "gameobject",
+                "go": "71451c81-5c2d-4364-ba49-dbe38ad99e1c"
+              },
+              "$28.component": {
+                "_type": "component",
+                "component_id": "08e48fbd-a799-453b-9e1e-90b06e9e709b",
+                "go": "cb3286a6-cb8c-459f-bd67-104b4d71e1ee",
+                "component_type": "SoundPointComponent"
+              }
+            }
+          },
+          "OnReset": {
+            "__version": 8,
+            "__guid": "9492e0b0-2f07-4ecf-bdf3-794610262175",
+            "__changeId": 42,
+            "UserData": {
+              "Title": "On Reset",
+              "ReferencedComponentTypes": []
+            },
+            "Variables": [],
+            "Nodes": [
+              {
+                "Id": 1,
+                "Type": "input",
+                "UserData": {
+                  "Position": "72,12"
+                }
+              },
+              {
+                "Id": 2,
+                "Type": "scene.ref",
+                "UserData": {
+                  "Position": "-60,60"
+                }
+              },
+              {
+                "Id": 3,
+                "Type": "property",
+                "Properties": {
+                  "_name": "Transform",
+                  "_type": "Sandbox.GameObject"
+                },
+                "UserData": {
+                  "Position": "72,96"
+                }
+              },
+              {
+                "Id": 4,
+                "Type": "property",
+                "Properties": {
+                  "_name": "World",
+                  "_type": "Sandbox.GameTransform"
+                },
+                "UserData": {
+                  "Position": "384,156"
+                }
+              },
+              {
+                "Id": 5,
+                "Type": "call",
+                "Properties": {
+                  "_isStatic": false,
+                  "_name": "RotateAround",
+                  "_type": "Transform"
+                },
+                "UserData": {
+                  "Position": "732,144"
+                }
+              },
+              {
+                "Id": 6,
+                "Type": "call",
+                "Properties": {
+                  "_isStatic": false,
+                  "_name": "GetBounds",
+                  "_type": "Sandbox.GameObject"
+                },
+                "UserData": {
+                  "Position": "72,192"
+                }
+              },
+              {
+                "Id": 7,
+                "Type": "property",
+                "Properties": {
+                  "_name": "Center",
+                  "_type": "BBox"
+                },
+                "UserData": {
+                  "Position": "264,192"
+                }
+              },
+              {
+                "Id": 8,
+                "Type": "property",
+                "Properties": {
+                  "_name": "World",
+                  "_type": "Sandbox.GameTransform"
+                },
+                "UserData": {
+                  "Position": "432,12"
+                }
+              },
+              {
+                "Id": 17,
+                "Type": "property",
+                "Properties": {
+                  "_name": "Size",
+                  "_type": "BBox"
+                },
+                "UserData": {
+                  "Position": "264,228"
+                }
+              },
+              {
+                "Id": 18,
+                "Type": "call",
+                "Properties": {
+                  "_isStatic": false,
+                  "_name": "WithX",
+                  "_type": "Vector3"
+                },
+                "UserData": {
+                  "Position": "456,264"
+                }
+              },
+              {
+                "Id": 20,
+                "Type": "call",
+                "Properties": {
+                  "_isStatic": false,
+                  "_name": "WithY",
+                  "_type": "Vector3"
+                },
+                "UserData": {
+                  "Position": "456,336"
+                }
+              },
+              {
+                "Id": 24,
+                "Type": "op.subtract",
+                "UserData": {
+                  "Position": "492,204"
+                }
+              }
+            ],
+            "Links": [
+              {
+                "SrcId": 2,
+                "SrcName": "_result",
+                "DstId": 3,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 3,
+                "SrcName": "_result",
+                "DstId": 4,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 4,
+                "SrcName": "_result",
+                "DstId": 5,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 24,
+                "SrcName": "_result",
+                "DstId": 5,
+                "DstName": "center"
+              },
+              {
+                "Id": 16,
+                "Value": "1,0,0,-0.00000004371139",
+                "DstId": 5,
+                "DstName": "rot"
+              },
+              {
+                "SrcId": 1,
+                "SrcName": "_target",
+                "DstId": 6,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 6,
+                "SrcName": "_result",
+                "DstId": 7,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 1,
+                "SrcName": "_signal",
+                "DstId": 8,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 3,
+                "SrcName": "_result",
+                "DstId": 8,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 5,
+                "SrcName": "_result",
+                "DstId": 8,
+                "DstName": "_value"
+              },
+              {
+                "SrcId": 6,
+                "SrcName": "_result",
+                "DstId": 17,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 17,
+                "SrcName": "_result",
+                "DstId": 18,
+                "DstName": "_target"
+              },
+              {
+                "Id": 19,
+                "Value": 0,
+                "DstId": 18,
+                "DstName": "x"
+              },
+              {
+                "SrcId": 18,
+                "SrcName": "_result",
+                "DstId": 20,
+                "DstName": "_target"
+              },
+              {
+                "Id": 21,
+                "Value": 0,
+                "DstId": 20,
+                "DstName": "y"
+              },
+              {
+                "SrcId": 7,
+                "SrcName": "_result",
+                "DstId": 24,
+                "DstName": "a"
+              },
+              {
+                "SrcId": 20,
+                "SrcName": "_result",
+                "DstId": 24,
+                "DstName": "b"
+              }
+            ],
+            "Defaults": {
+              "$2.gameobject": {
+                "_type": "gameobject",
+                "go": "71451c81-5c2d-4364-ba49-dbe38ad99e1c"
+              }
+            }
+          },
+          "RealElapsedSeconds": 2410.1099,
+          "UseRealTime": false
+        }
+      ],
+      "Children": [
+        {
+          "__guid": "cb3286a6-cb8c-459f-bd67-104b4d71e1ee",
+          "Flags": 0,
+          "Name": "quack",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.SoundPointComponent",
+              "__guid": "08e48fbd-a799-453b-9e1e-90b06e9e709b",
+              "DistanceAttenuation": false,
+              "DistanceAttenuationOverride": false,
+              "Force2d": false,
+              "MaxRepeatTime": 1,
+              "MinRepeatTime": 1,
+              "Occlusion": false,
+              "OcclusionOverride": true,
+              "OcclusionRadius": 32,
+              "Pitch": 1,
+              "PlayOnStart": false,
+              "ReflectionOverride": false,
+              "Reflections": false,
+              "Repeat": false,
+              "SoundEvent": "sounds/quack.sound",
+              "SoundOverride": true,
+              "StopOnNew": true,
+              "TargetMixer": {
+                "Name": "unknown",
+                "Id": "00000000-0000-0000-0000-000000000000"
+              },
+              "Volume": 0.2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "__guid": "3860b582-d1df-42b5-80f6-9acea2f75ad5",
+      "Flags": 0,
+      "Name": "Fireworks",
+      "Position": "432,0,224",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Duccsoft.SpawnerBox",
+          "__guid": "9617a5b7-88ad-4505-b5b3-81ebd78eb910",
+          "Bounds": {
+            "Mins": "-100,-1000,-200",
+            "Maxs": "1000,1000,1000"
+          },
+          "InitialSpawnCount": "1",
+          "Parent": {
+            "_type": "gameobject",
+            "go": "3860b582-d1df-42b5-80f6-9acea2f75ad5"
+          },
+          "Prefabs": [
+            {
+              "_type": "gameobject",
+              "prefab": "prefabs/particle_fireworks.prefab"
+            }
+          ],
+          "RandomScale": "1",
+          "RotationRandomness": "1,1,1"
+        },
+        {
+          "__type": "Duccsoft.TimerComponent",
+          "__guid": "60c11eea-393d-4fa7-a478-71b36e140f2d",
+          "AutoRepeat": true,
+          "ElapsedSeconds": 8806.204,
+          "HasFired": false,
+          "IntervalSeconds": "0.05 0.6",
+          "OnFire": {
+            "__version": 8,
+            "__guid": "4f75864f-b76d-49b5-802b-bdb2fa78f7dc",
+            "__changeId": 7,
+            "UserData": {
+              "Title": "On Fire",
+              "ReferencedComponentTypes": []
+            },
+            "Variables": [],
+            "Nodes": [
+              {
+                "Id": 0,
+                "Type": "input"
+              },
+              {
+                "Id": 2,
+                "Type": "scene.ref",
+                "UserData": {
+                  "Position": "-0,84"
+                }
+              },
+              {
+                "Id": 3,
+                "Type": "call",
+                "Properties": {
+                  "_isStatic": false,
+                  "_name": "SpawnOne",
+                  "_type": "Duccsoft.SpawnerBox"
+                },
+                "UserData": {
+                  "Position": "144,0"
+                }
+              }
+            ],
+            "Links": [
+              {
+                "SrcId": 0,
+                "SrcName": "_signal",
+                "DstId": 3,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 2,
+                "SrcName": "_result",
+                "DstId": 3,
+                "DstName": "_target"
+              }
+            ],
+            "Defaults": {
+              "$2.component": {
+                "_type": "component",
+                "component_id": "9617a5b7-88ad-4505-b5b3-81ebd78eb910",
+                "go": "3860b582-d1df-42b5-80f6-9acea2f75ad5",
+                "component_type": "SpawnerBox"
+              }
+            }
+          },
+          "RealElapsedSeconds": 88300460,
+          "UseRealTime": false
+        }
+      ]
+    },
+    {
+      "__guid": "260153d9-bb1e-4712-bed5-fcd1259d506f",
+      "Flags": 0,
+      "Name": "Camera",
+      "Position": "-72,0,16",
+      "Rotation": "0,-0.08715574,0,0.9961947",
+      "Tags": "maincamera",
+      "Enabled": true,
+      "__Prefab": "prefabs/camera.prefab",
+      "__PrefabVariables": {}
     }
   ],
   "SceneProperties": {
@@ -617,6 +1269,8 @@
   "Title": "timer",
   "Description": "",
   "ResourceVersion": 1,
-  "__references": [],
+  "__references": [
+    "duccsoft.duck_decoration#16326"
+  ],
   "__version": 1
 }

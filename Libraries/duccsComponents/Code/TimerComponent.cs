@@ -10,7 +10,7 @@ public class TimerComponent : Component
 	[Property] public TimerEvent OnFire { get; set; }
 	[Property] public TimerEvent OnReset { get; set; }
 
-	[Property] public float IntervalSeconds { get; set; } = 1f;
+	[Property] public RangedFloat IntervalSeconds { get; set; } = 1f;
 	[Property] public bool AutoRepeat { get; set; }
 	[Property] public bool UseRealTime { get; set; }
 	[Property, ReadOnly, Group("State")] public bool HasFired { get; private set; }
@@ -21,11 +21,13 @@ public class TimerComponent : Component
 
 	private TimeSince _sinceStart;
 	private RealTimeSince _realTimeSinceStart;
+	private float _nextTime;
 
 	protected override void OnStart()
 	{
 		_sinceStart = 0f;
 		_realTimeSinceStart = 0f;
+		_nextTime = IntervalSeconds.GetValue();
 	}
 
 	protected override void OnUpdate()
@@ -34,8 +36,8 @@ public class TimerComponent : Component
 			return;
 
 		var shouldFire = UseRealTime
-			? RealElapsedSeconds >= IntervalSeconds
-			: ElapsedSeconds >= IntervalSeconds;
+			? RealElapsedSeconds >= _nextTime
+			: ElapsedSeconds >= _nextTime;
 
 		if ( shouldFire )
 		{
@@ -66,6 +68,7 @@ public class TimerComponent : Component
 		HasFired = false;
 		_sinceStart = 0f;
 		_realTimeSinceStart = 0f;
+		_nextTime = IntervalSeconds.GetValue();
 		OnReset?.Invoke( this );
 	}
 }
