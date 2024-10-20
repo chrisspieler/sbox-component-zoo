@@ -48,7 +48,7 @@
           "__guid": "1d194e7d-e857-4200-903a-c6c2047ff72b",
           "Center": "0,0,0",
           "IsTrigger": false,
-          "Scale": "50,50",
+          "Scale": "100,100",
           "Static": true,
           "SurfaceVelocity": "0,0,0"
         }
@@ -648,6 +648,450 @@
               "RotationPerSecond": "0,2700,0"
             }
           ]
+        }
+      ]
+    },
+    {
+      "__guid": "a3a707a2-2f93-41bc-beff-690c5f828186",
+      "Flags": 0,
+      "Name": "Box Spawner",
+      "Position": "208,9.983713,112",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Duccsoft.SpawnerBox",
+          "__guid": "6a1662be-a9cf-4e62-8813-2702958630c7",
+          "Bounds": {
+            "Mins": "-50,-75,-50",
+            "Maxs": "50,75,50"
+          },
+          "InitialSpawnCount": "0",
+          "OnSpawn": {
+            "__version": 8,
+            "__guid": "a4604efe-3035-4dc4-bb6e-e8c8d76008a9",
+            "__changeId": 46,
+            "UserData": {
+              "Title": "On Spawn",
+              "ReferencedComponentTypes": []
+            },
+            "Variables": [],
+            "Nodes": [
+              {
+                "Id": 0,
+                "Type": "input",
+                "UserData": {
+                  "Position": "-12,0"
+                }
+              },
+              {
+                "Id": 1,
+                "Type": "call",
+                "Properties": {
+                  "_isStatic": false,
+                  "_name": "Create",
+                  "_type": "Sandbox.IComponentLister",
+                  "T": "Duccsoft.SelfDestruct"
+                },
+                "UserData": {
+                  "Position": "156,-0"
+                }
+              },
+              {
+                "Id": 2,
+                "Type": "property",
+                "Properties": {
+                  "_name": "Delay",
+                  "_type": "Duccsoft.SelfDestruct"
+                },
+                "UserData": {
+                  "Position": "444,-0"
+                }
+              },
+              {
+                "Id": 6,
+                "Type": "property",
+                "Properties": {
+                  "_name": "MassOverride",
+                  "_type": "Sandbox.Rigidbody"
+                },
+                "UserData": {
+                  "Position": "684,96"
+                }
+              },
+              {
+                "Id": 12,
+                "Type": "call",
+                "Properties": {
+                  "_isStatic": false,
+                  "_name": "Get",
+                  "_type": "Sandbox.IComponentLister",
+                  "T": "Sandbox.Rigidbody"
+                },
+                "UserData": {
+                  "Position": "180,96"
+                }
+              }
+            ],
+            "Links": [
+              {
+                "SrcId": 0,
+                "SrcName": "_signal",
+                "DstId": 1,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 0,
+                "SrcName": "obj",
+                "DstId": 1,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 1,
+                "SrcName": "_signal",
+                "DstId": 2,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 1,
+                "SrcName": "_result",
+                "DstId": 2,
+                "DstName": "_target"
+              },
+              {
+                "Id": 4,
+                "Value": 5,
+                "DstId": 2,
+                "DstName": "_value"
+              },
+              {
+                "SrcId": 2,
+                "SrcName": "_signal",
+                "DstId": 6,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 12,
+                "SrcName": "_result",
+                "DstId": 6,
+                "DstName": "_target"
+              },
+              {
+                "Id": 19,
+                "Value": 50,
+                "DstId": 6,
+                "DstName": "_value"
+              },
+              {
+                "SrcId": 0,
+                "SrcName": "obj",
+                "DstId": 12,
+                "DstName": "_target"
+              },
+              {
+                "Id": 13,
+                "Value": "EnabledInSelfAndDescendants",
+                "DstId": 12,
+                "DstName": "search"
+              }
+            ]
+          },
+          "Prefabs": [
+            {
+              "_type": "gameobject",
+              "prefab": "prefabs/physics_cube.prefab"
+            }
+          ],
+          "RandomScale": "1.25",
+          "RotationRandomness": "1,1,1"
+        },
+        {
+          "__type": "Duccsoft.TimerComponent",
+          "__guid": "7712783c-49d5-4e16-a3d2-be519893ee4e",
+          "AutoRepeat": true,
+          "ElapsedSeconds": 3766.2705,
+          "HasFired": false,
+          "IntervalSeconds": "2",
+          "OnFire": {
+            "__version": 8,
+            "__guid": "36f2afc7-e38b-4ea3-8123-6b5cd8137f71",
+            "__changeId": 7,
+            "UserData": {
+              "Title": "On Fire",
+              "ReferencedComponentTypes": []
+            },
+            "Variables": [],
+            "Nodes": [
+              {
+                "Id": 0,
+                "Type": "input"
+              },
+              {
+                "Id": 2,
+                "Type": "scene.ref",
+                "UserData": {
+                  "Position": "0,84"
+                }
+              },
+              {
+                "Id": 3,
+                "Type": "call",
+                "Properties": {
+                  "_isStatic": false,
+                  "_name": "SpawnOne",
+                  "_type": "Duccsoft.SpawnerBox"
+                },
+                "UserData": {
+                  "Position": "168,0"
+                }
+              }
+            ],
+            "Links": [
+              {
+                "SrcId": 0,
+                "SrcName": "_signal",
+                "DstId": 3,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 2,
+                "SrcName": "_result",
+                "DstId": 3,
+                "DstName": "_target"
+              }
+            ],
+            "Defaults": {
+              "$2.component": {
+                "_type": "component",
+                "component_id": "6a1662be-a9cf-4e62-8813-2702958630c7",
+                "go": "a3a707a2-2f93-41bc-beff-690c5f828186",
+                "component_type": "SpawnerBox"
+              }
+            }
+          },
+          "RealElapsedSeconds": 88448690,
+          "UseRealTime": false
+        }
+      ]
+    },
+    {
+      "__guid": "9eeef2fc-8cf9-458e-abb1-6eb7499967e3",
+      "Flags": 0,
+      "Name": "Box Spawner (1)",
+      "Position": "0,9.983713,112",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Duccsoft.SpawnerBox",
+          "__guid": "11559abe-c6ba-4365-9e19-5fcd43120ce3",
+          "Bounds": {
+            "Mins": "-50,-75,-50",
+            "Maxs": "50,75,50"
+          },
+          "InitialSpawnCount": "0",
+          "OnSpawn": {
+            "__version": 8,
+            "__guid": "53e1eda9-b1fa-4f83-a98c-37119182a367",
+            "__changeId": 46,
+            "UserData": {
+              "Title": "On Spawn",
+              "ReferencedComponentTypes": []
+            },
+            "Variables": [],
+            "Nodes": [
+              {
+                "Id": 0,
+                "Type": "input",
+                "UserData": {
+                  "Position": "-12,0"
+                }
+              },
+              {
+                "Id": 1,
+                "Type": "call",
+                "Properties": {
+                  "_isStatic": false,
+                  "_name": "Create",
+                  "_type": "Sandbox.IComponentLister",
+                  "T": "Duccsoft.SelfDestruct"
+                },
+                "UserData": {
+                  "Position": "156,-0"
+                }
+              },
+              {
+                "Id": 2,
+                "Type": "property",
+                "Properties": {
+                  "_name": "Delay",
+                  "_type": "Duccsoft.SelfDestruct"
+                },
+                "UserData": {
+                  "Position": "444,-0"
+                }
+              },
+              {
+                "Id": 6,
+                "Type": "property",
+                "Properties": {
+                  "_name": "MassOverride",
+                  "_type": "Sandbox.Rigidbody"
+                },
+                "UserData": {
+                  "Position": "684,96"
+                }
+              },
+              {
+                "Id": 12,
+                "Type": "call",
+                "Properties": {
+                  "_isStatic": false,
+                  "_name": "Get",
+                  "_type": "Sandbox.IComponentLister",
+                  "T": "Sandbox.Rigidbody"
+                },
+                "UserData": {
+                  "Position": "180,96"
+                }
+              }
+            ],
+            "Links": [
+              {
+                "SrcId": 0,
+                "SrcName": "_signal",
+                "DstId": 1,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 0,
+                "SrcName": "obj",
+                "DstId": 1,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 1,
+                "SrcName": "_signal",
+                "DstId": 2,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 1,
+                "SrcName": "_result",
+                "DstId": 2,
+                "DstName": "_target"
+              },
+              {
+                "Id": 13,
+                "Value": 5,
+                "DstId": 2,
+                "DstName": "_value"
+              },
+              {
+                "SrcId": 2,
+                "SrcName": "_signal",
+                "DstId": 6,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 12,
+                "SrcName": "_result",
+                "DstId": 6,
+                "DstName": "_target"
+              },
+              {
+                "Id": 14,
+                "Value": 50,
+                "DstId": 6,
+                "DstName": "_value"
+              },
+              {
+                "SrcId": 0,
+                "SrcName": "obj",
+                "DstId": 12,
+                "DstName": "_target"
+              },
+              {
+                "Id": 15,
+                "Value": "EnabledInSelfAndDescendants",
+                "DstId": 12,
+                "DstName": "search"
+              }
+            ]
+          },
+          "Prefabs": [
+            {
+              "_type": "gameobject",
+              "prefab": "prefabs/physics_cube.prefab"
+            }
+          ],
+          "RandomScale": "1.25",
+          "RotationRandomness": "1,1,1"
+        },
+        {
+          "__type": "Duccsoft.TimerComponent",
+          "__guid": "dd95e821-b951-4190-9aca-c9dc721ed154",
+          "AutoRepeat": true,
+          "ElapsedSeconds": 3766.2705,
+          "HasFired": false,
+          "IntervalSeconds": "2",
+          "OnFire": {
+            "__version": 8,
+            "__guid": "d4804de0-89ff-4282-ab6a-b47aeddf649f",
+            "__changeId": 7,
+            "UserData": {
+              "Title": "On Fire",
+              "ReferencedComponentTypes": []
+            },
+            "Variables": [],
+            "Nodes": [
+              {
+                "Id": 0,
+                "Type": "input"
+              },
+              {
+                "Id": 2,
+                "Type": "scene.ref",
+                "UserData": {
+                  "Position": "0,84"
+                }
+              },
+              {
+                "Id": 3,
+                "Type": "call",
+                "Properties": {
+                  "_isStatic": false,
+                  "_name": "SpawnOne",
+                  "_type": "Duccsoft.SpawnerBox"
+                },
+                "UserData": {
+                  "Position": "168,0"
+                }
+              }
+            ],
+            "Links": [
+              {
+                "SrcId": 0,
+                "SrcName": "_signal",
+                "DstId": 3,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 2,
+                "SrcName": "_result",
+                "DstId": 3,
+                "DstName": "_target"
+              }
+            ],
+            "Defaults": {
+              "$2.component": {
+                "_type": "component",
+                "component_id": "11559abe-c6ba-4365-9e19-5fcd43120ce3",
+                "go": "9eeef2fc-8cf9-458e-abb1-6eb7499967e3",
+                "component_type": "SpawnerBox"
+              }
+            }
+          },
+          "RealElapsedSeconds": 88448690,
+          "UseRealTime": false
         }
       ]
     }

@@ -1,0 +1,87 @@
+{
+  "RootObject": {
+    "__guid": "7fce1a0d-78fe-4eed-a565-7de034f5db1e",
+    "Flags": 0,
+    "Name": "physics_cube",
+    "Enabled": true,
+    "Children": [
+      {
+        "__guid": "07344c90-9bb1-4900-88ac-c0d28592467f",
+        "Flags": 0,
+        "Name": "Cube",
+        "Position": "0,0,12.5",
+        "Scale": "0.5,0.5,0.5",
+        "Enabled": true,
+        "Components": [
+          {
+            "__type": "Sandbox.ModelRenderer",
+            "__guid": "9f8b0477-f94b-4d86-a58f-86d67d7d8677",
+            "BodyGroups": 18446744073709551615,
+            "MaterialOverride": "materials/dev/dev_metal_rough40.vmat",
+            "Model": "models/dev/box.vmdl",
+            "RenderOptions": {
+              "GameLayer": true,
+              "OverlayLayer": false,
+              "BloomLayer": false,
+              "AfterUILayer": false
+            },
+            "RenderType": "On",
+            "Tint": "0.8093,0.8093,0.8093,1"
+          },
+          {
+            "__type": "Sandbox.Rigidbody",
+            "__guid": "4b60eb5b-d3ce-49f6-bdf6-a56008f745bb",
+            "AngularDamping": 0,
+            "Gravity": true,
+            "LinearDamping": 0,
+            "Locking": {},
+            "MassCenterOverride": "0,0,0",
+            "MassOverride": 0,
+            "MotionEnabled": true,
+            "OverrideMassCenter": false,
+            "RigidbodyFlags": 0,
+            "StartAsleep": false
+          },
+          {
+            "__type": "Sandbox.BoxCollider",
+            "__guid": "e1e90c9a-a102-47b2-823c-94fb7c42ecd9",
+            "Center": "0,0,0",
+            "IsTrigger": false,
+            "Scale": "50,50,50",
+            "Static": false,
+            "SurfaceVelocity": "0,0,0"
+          }
+        ]
+      }
+    ],
+    "__variables": [
+      {
+        "Id": "Mass Override",
+        "Title": "Mass Override",
+        "Targets": [
+          {
+            "Id": "4b60eb5b-d3ce-49f6-bdf6-a56008f745bb",
+            "Property": "MassOverride"
+          }
+        ]
+      },
+      {
+        "Id": "Tint",
+        "Title": "Tint",
+        "Targets": [
+          {
+            "Id": "9f8b0477-f94b-4d86-a58f-86d67d7d8677",
+            "Property": "Tint"
+          }
+        ]
+      }
+    ]
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "DontBreakAsTemplate": false,
+  "ResourceVersion": 1,
+  "__references": [],
+  "__version": 1
+}
