@@ -1,0 +1,682 @@
+{
+  "__guid": "cac78323-ecdf-4ed9-bce1-8b1a059867df",
+  "GameObjects": [
+    {
+      "__guid": "21ca2e0a-3396-4a13-b47e-14498ba2e72d",
+      "Flags": 0,
+      "Name": "environment",
+      "Enabled": true,
+      "__Prefab": "prefabs/environment.prefab",
+      "__PrefabVariables": {}
+    },
+    {
+      "__guid": "5066222d-ef28-4ebc-bcdc-7401a58eca2a",
+      "Flags": 0,
+      "Name": "Camera",
+      "Position": "0,-0.00001154371,300",
+      "Rotation": "0,0.6087614,0,0.7933533",
+      "Tags": "maincamera",
+      "Enabled": true,
+      "__Prefab": "prefabs/camera.prefab",
+      "__PrefabVariables": {}
+    },
+    {
+      "__guid": "909b6043-358c-4018-8795-0e106e93cfa9",
+      "Flags": 0,
+      "Name": "Plane",
+      "Rotation": "0,0,-1,0.0000001947072",
+      "Scale": "10,10,1",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "abdfe0fc-ea7b-4f99-8adb-20b427436f75",
+          "BodyGroups": 18446744073709551615,
+          "MaterialOverride": "materials/dev/dev_nonmetal_rough60.vmat",
+          "Model": "models/dev/plane.vmdl",
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Tint": "0.03698,0.03505,0.04186,1"
+        },
+        {
+          "__type": "Sandbox.PlaneCollider",
+          "__guid": "1d194e7d-e857-4200-903a-c6c2047ff72b",
+          "Center": "0,0,0",
+          "IsTrigger": false,
+          "Scale": "50,50",
+          "Static": true,
+          "SurfaceVelocity": "0,0,0"
+        }
+      ]
+    },
+    {
+      "__guid": "7991ea37-17cd-47f4-a012-2946c5ef6f99",
+      "Flags": 0,
+      "Name": "Spinner Base",
+      "Position": "1,0,10",
+      "Scale": "0.05,0.05,0.5",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "4d5df590-20a6-4544-81ed-658595651831",
+          "BodyGroups": 18446744073709551615,
+          "Model": "models/dev/box.vmdl",
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "Sandbox.BoxCollider",
+          "__guid": "83fdb4c5-47e1-4a10-87f5-eab117e96d23",
+          "Center": "0,0,0",
+          "IsTrigger": false,
+          "Scale": "50,50,50",
+          "Static": false,
+          "SurfaceVelocity": "0,0,0"
+        }
+      ],
+      "Children": [
+        {
+          "__guid": "0623fa7c-f1da-4b53-9965-ec42dd0daf3c",
+          "Flags": 0,
+          "Name": "Label",
+          "Position": "0,0,60",
+          "Scale": "20,20,2",
+          "Enabled": true,
+          "__Prefab": "prefabs/label.prefab",
+          "__PrefabVariables": {
+            "Text Scope": {
+              "Text": "Keyframed",
+              "TextColor": "1,1,1,1",
+              "FontName": "Poppins",
+              "FontSize": 64,
+              "FontWeight": 400,
+              "LineHeight": 1,
+              "Outline": {
+                "Enabled": true,
+                "Size": 4,
+                "Color": "0,0,0,1"
+              },
+              "Shadow": {
+                "Enabled": true,
+                "Size": 4,
+                "Color": "0,0,0,1",
+                "Offset": "4,4"
+              },
+              "OutlineUnder": {
+                "Size": 4,
+                "Color": "0,1,0,1"
+              },
+              "ShadowUnder": {
+                "Size": 4,
+                "Color": "0,0,0,1",
+                "Offset": "4,4"
+              }
+            },
+            "Scale": 0.15
+          }
+        },
+        {
+          "__guid": "1c9dd7e6-0f0e-4b8c-8278-a91117ce6df1",
+          "Flags": 0,
+          "Name": "Spinner Arm",
+          "Position": "0,0,28",
+          "Scale": "3,40,0.1",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "4eed8fda-7ba4-4397-b1e5-60df6ce9ade0",
+              "BodyGroups": 18446744073709551615,
+              "Model": "models/dev/box.vmdl",
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
+              "RenderType": "On",
+              "Tint": "0.2186,0.2186,0.2186,1"
+            },
+            {
+              "__type": "Sandbox.BoxCollider",
+              "__guid": "70a2698a-cdec-4d2a-b50a-450ba9ae4487",
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "50,50,50",
+              "Static": false,
+              "SurfaceVelocity": "0,0,0"
+            },
+            {
+              "__type": "Duccsoft.Rotator",
+              "__guid": "71c0a193-5bb2-44af-98c1-f272be05b670",
+              "CoordinateSpace": "Local",
+              "RotationPerSecond": "0,180,0"
+            }
+          ],
+          "Children": [
+            {
+              "__guid": "9605e5eb-e87d-4207-9cdd-5f2a16309636",
+              "Flags": 0,
+              "Name": "Rotor R",
+              "Position": "0,25,60",
+              "Scale": "0.3333333,0.375,1",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "Sandbox.ModelRenderer",
+                  "__guid": "b0b6323c-b7cb-4fb2-9443-de8d104cbad4",
+                  "BodyGroups": 18446744073709551615,
+                  "Model": "models/dev/box.vmdl",
+                  "RenderOptions": {
+                    "GameLayer": true,
+                    "OverlayLayer": false,
+                    "BloomLayer": false,
+                    "AfterUILayer": false
+                  },
+                  "RenderType": "On",
+                  "Tint": "1,0,0,1"
+                },
+                {
+                  "__type": "Sandbox.BoxCollider",
+                  "__guid": "fc59786c-afca-4742-97c7-7ab86da375bd",
+                  "Center": "0,0,0",
+                  "IsTrigger": false,
+                  "Scale": "50,50,50",
+                  "Static": false,
+                  "SurfaceVelocity": "0,0,0"
+                },
+                {
+                  "__type": "Duccsoft.Rotator",
+                  "__guid": "960a828e-e0da-4d43-9efe-cd24f4d0fc7a",
+                  "CoordinateSpace": "Local",
+                  "RotationPerSecond": "0,720,0"
+                }
+              ]
+            },
+            {
+              "__guid": "67fa8fca-8fb1-4db8-9fb3-1b024cbf0dc0",
+              "Flags": 0,
+              "Name": "Rotor B",
+              "Position": "0,-25,60",
+              "Scale": "0.3333333,0.375,1",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "Sandbox.ModelRenderer",
+                  "__guid": "45be83b8-de03-42a9-b3da-112964420f8a",
+                  "BodyGroups": 18446744073709551615,
+                  "Model": "models/dev/box.vmdl",
+                  "RenderOptions": {
+                    "GameLayer": true,
+                    "OverlayLayer": false,
+                    "BloomLayer": false,
+                    "AfterUILayer": false
+                  },
+                  "RenderType": "On",
+                  "Tint": "0.09804,0,1,1"
+                },
+                {
+                  "__type": "Sandbox.BoxCollider",
+                  "__guid": "23e63674-65b8-4a40-b759-ae87c417470a",
+                  "Center": "0,0,0",
+                  "IsTrigger": false,
+                  "Scale": "50,50,50",
+                  "Static": false,
+                  "SurfaceVelocity": "0,0,0"
+                },
+                {
+                  "__type": "Duccsoft.Rotator",
+                  "__guid": "0d2143e3-c468-4e85-bc95-f56c80aa80ae",
+                  "CoordinateSpace": "Local",
+                  "RotationPerSecond": "0,2700,0"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "__guid": "e82b954e-0206-4bd4-ac79-99df83ceca89",
+      "Flags": 0,
+      "Name": "Physics Spinner",
+      "Position": "200,0,0",
+      "Enabled": true,
+      "Children": [
+        {
+          "__guid": "0280d455-34ec-44b0-94d0-de4e5e704fd8",
+          "Flags": 0,
+          "Name": "Label",
+          "Position": "-0.02728271,0.005578972,40",
+          "Rotation": "-0.003484338,0.006061443,0.0006242853,0.9999754",
+          "Enabled": true,
+          "__Prefab": "prefabs/label.prefab",
+          "__PrefabVariables": {
+            "Text Scope": {
+              "Text": "Rigidbody",
+              "TextColor": "1,1,1,1",
+              "FontName": "Poppins",
+              "FontSize": 64,
+              "FontWeight": 400,
+              "LineHeight": 1,
+              "Outline": {
+                "Enabled": true,
+                "Size": 4,
+                "Color": "0,0,0,1"
+              },
+              "Shadow": {
+                "Enabled": true,
+                "Size": 4,
+                "Color": "0,0,0,1",
+                "Offset": "4,4"
+              },
+              "OutlineUnder": {
+                "Size": 4,
+                "Color": "0,1,0,1"
+              },
+              "ShadowUnder": {
+                "Size": 4,
+                "Color": "0,0,0,1",
+                "Offset": "4,4"
+              }
+            },
+            "Scale": 0.15
+          }
+        },
+        {
+          "__guid": "0ff0bfcd-6eb1-4f04-b483-a8d1f5c71db6",
+          "Flags": 0,
+          "Name": "Physics Spinner Base",
+          "Position": "-0.0003814697,-0.000231266,10",
+          "Scale": "0.05,0.05,0.5",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "c4f0e843-6cbb-4761-8165-886070c3e990",
+              "BodyGroups": 18446744073709551615,
+              "Model": "models/dev/box.vmdl",
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "Sandbox.BoxCollider",
+              "__guid": "a5cffc00-a5d8-4dfc-90fb-60c4d0abd635",
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "50,50,50",
+              "Static": true,
+              "SurfaceVelocity": "0,0,0"
+            }
+          ],
+          "Children": [
+            {
+              "__guid": "8e63453d-e0c5-40bf-856a-c76028501d44",
+              "Flags": 0,
+              "Name": "Attach Point",
+              "Position": "0,0,24",
+              "Enabled": true
+            }
+          ]
+        },
+        {
+          "__guid": "99955e12-aa9d-4d3e-86a1-7325e48cd3a3",
+          "Flags": 0,
+          "Name": "Physics Spinner Arm",
+          "Position": "-0.02728271,0.005578995,23.86802",
+          "Rotation": "-0.003484338,0.006061443,0.0006242853,0.9999754",
+          "Scale": "0.15,2,0.05",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "5e6c8f59-26e4-48cb-a379-900ed27ea356",
+              "BodyGroups": 18446744073709551615,
+              "Model": "models/dev/box.vmdl",
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
+              "RenderType": "On",
+              "Tint": "0.21569,0.21569,0.21569,1"
+            },
+            {
+              "__type": "Sandbox.BoxCollider",
+              "__guid": "157505db-d6eb-4c8a-aae2-46b19d487683",
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "50,50,50",
+              "Static": false,
+              "SurfaceVelocity": "0,0,0"
+            },
+            {
+              "__type": "Sandbox.Rigidbody",
+              "__guid": "cda66216-44cc-4bd8-8885-02af76f24ec2",
+              "AngularDamping": 0,
+              "Gravity": true,
+              "LinearDamping": 0,
+              "Locking": {},
+              "MassCenterOverride": "0,0,0",
+              "MassOverride": 0,
+              "MotionEnabled": true,
+              "OverrideMassCenter": false,
+              "RigidbodyFlags": 0,
+              "StartAsleep": false
+            },
+            {
+              "__type": "Sandbox.HingeJoint",
+              "__guid": "06fa49c8-0c0c-4f88-99d9-b6a8b5de672f",
+              "Attachment": "Auto",
+              "Body": {
+                "_type": "gameobject",
+                "go": "8e63453d-e0c5-40bf-856a-c76028501d44"
+              },
+              "BreakForce": 0,
+              "BreakTorque": 0,
+              "DampingRatio": 1,
+              "EnableCollision": false,
+              "Fequency": 1,
+              "Friction": 0,
+              "LocalFrame1": {
+                "UniformScale": 1,
+                "IsValid": true,
+                "ForwardRay": {
+                  "Forward": "1,0,0"
+                },
+                "Scale": "1,1,1",
+                "Rotation": "0,0,0,1"
+              },
+              "LocalFrame2": {
+                "UniformScale": 1,
+                "IsValid": true,
+                "ForwardRay": {
+                  "Forward": "1,0,0"
+                },
+                "Scale": "1,1,1",
+                "Rotation": "0,0,0,1"
+              },
+              "MaxAngle": 0,
+              "MaxTorque": 0,
+              "MinAngle": 0,
+              "Motor": "Disabled",
+              "TargetAngle": 0,
+              "TargetVelocity": 0
+            },
+            {
+              "__type": "Duccsoft.Rotator",
+              "__guid": "56833be2-e79c-43cb-9d11-1ba3fb684d3a",
+              "CoordinateSpace": "Local",
+              "Rigidbody": {
+                "_type": "component",
+                "component_id": "cda66216-44cc-4bd8-8885-02af76f24ec2",
+                "go": "99955e12-aa9d-4d3e-86a1-7325e48cd3a3",
+                "component_type": "Rigidbody"
+              },
+              "RotationPerSecond": "0,180,0"
+            }
+          ],
+          "Children": [
+            {
+              "__guid": "5bb5103a-7854-4e77-9ce8-b6f0a7a24f6f",
+              "Flags": 0,
+              "Name": "Rotor Attach R",
+              "Position": "0.00004554167,25,20",
+              "Enabled": true
+            },
+            {
+              "__guid": "f52de2f1-8767-4ac0-a201-39c543d64b05",
+              "Flags": 0,
+              "Name": "Rotor Attach B",
+              "Position": "0.00001932184,-25,20.00002",
+              "Scale": "0.3333333,0.375,1",
+              "Enabled": true
+            }
+          ]
+        },
+        {
+          "__guid": "f2f82ac3-734e-4ce9-8ec6-35cb43c9fe7c",
+          "Flags": 0,
+          "Name": "Physics Rotor R",
+          "Position": "-0.0003814697,49.99977,27",
+          "Scale": "0.05,0.75,0.05",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "d4f1967e-2123-4529-85d8-c88ed7ca8a4e",
+              "BodyGroups": 18446744073709551615,
+              "Model": "models/dev/box.vmdl",
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
+              "RenderType": "On",
+              "Tint": "1,0,0,1"
+            },
+            {
+              "__type": "Sandbox.BoxCollider",
+              "__guid": "5443e59e-9687-4e98-840d-77a0368af3f3",
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "50,50,50",
+              "Static": false,
+              "SurfaceVelocity": "0,0,0"
+            },
+            {
+              "__type": "Sandbox.Rigidbody",
+              "__guid": "e19ce181-e948-4215-ab9f-43b4339b5df3",
+              "AngularDamping": 0,
+              "Gravity": true,
+              "LinearDamping": 0,
+              "Locking": {},
+              "MassCenterOverride": "0,0,0",
+              "MassOverride": 0,
+              "MotionEnabled": true,
+              "OverrideMassCenter": false,
+              "RigidbodyFlags": 0,
+              "StartAsleep": false
+            },
+            {
+              "__type": "Sandbox.HingeJoint",
+              "__guid": "09699964-b497-4651-bc62-5de102e9edf7",
+              "Attachment": "Auto",
+              "Body": {
+                "_type": "gameobject",
+                "go": "5bb5103a-7854-4e77-9ce8-b6f0a7a24f6f"
+              },
+              "BreakForce": 0,
+              "BreakTorque": 0,
+              "DampingRatio": 1,
+              "EnableCollision": false,
+              "Fequency": 1,
+              "Friction": 0,
+              "LocalFrame1": {
+                "UniformScale": 1,
+                "IsValid": true,
+                "ForwardRay": {
+                  "Forward": "1,0,0"
+                },
+                "Scale": "1,1,1",
+                "Rotation": "0,0,0,1"
+              },
+              "LocalFrame2": {
+                "UniformScale": 1,
+                "IsValid": true,
+                "ForwardRay": {
+                  "Forward": "1,0,0"
+                },
+                "Scale": "1,1,1",
+                "Rotation": "0,0,0,1"
+              },
+              "MaxAngle": 0,
+              "MaxTorque": 0,
+              "MinAngle": 0,
+              "Motor": "Disabled",
+              "TargetAngle": 0,
+              "TargetVelocity": 0
+            },
+            {
+              "__type": "Duccsoft.Rotator",
+              "__guid": "93d35fd2-9f7b-4dd9-8bbc-341fde2c6ec9",
+              "CoordinateSpace": "Local",
+              "Rigidbody": {
+                "_type": "component",
+                "component_id": "e19ce181-e948-4215-ab9f-43b4339b5df3",
+                "go": "f2f82ac3-734e-4ce9-8ec6-35cb43c9fe7c",
+                "component_type": "Rigidbody"
+              },
+              "RotationPerSecond": "0,720,0"
+            }
+          ]
+        },
+        {
+          "__guid": "47712029-65fe-4ec3-ac7d-048ed1949619",
+          "Flags": 0,
+          "Name": "Physics Rotor B",
+          "Position": "-0.0003814697,-50.00024,27",
+          "Scale": "0.05,0.75,0.05",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "9cb97425-7c03-4103-a597-6dfbec85a74d",
+              "BodyGroups": 18446744073709551615,
+              "Model": "models/dev/box.vmdl",
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
+              "RenderType": "On",
+              "Tint": "0.1,0,1,1"
+            },
+            {
+              "__type": "Sandbox.BoxCollider",
+              "__guid": "51afb811-3856-48e6-a605-4124d34da557",
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "50,50,50",
+              "Static": false,
+              "SurfaceVelocity": "0,0,0"
+            },
+            {
+              "__type": "Sandbox.Rigidbody",
+              "__guid": "0ad5c6d9-3ee7-4705-93df-0cb2cced28a0",
+              "AngularDamping": 0,
+              "Gravity": true,
+              "LinearDamping": 0,
+              "Locking": {},
+              "MassCenterOverride": "0,0,0",
+              "MassOverride": 0,
+              "MotionEnabled": true,
+              "OverrideMassCenter": false,
+              "RigidbodyFlags": 0,
+              "StartAsleep": false
+            },
+            {
+              "__type": "Sandbox.HingeJoint",
+              "__guid": "7f2d81f5-618d-4b39-bdf4-a1d5b81a254d",
+              "Attachment": "Auto",
+              "Body": {
+                "_type": "gameobject",
+                "go": "f52de2f1-8767-4ac0-a201-39c543d64b05"
+              },
+              "BreakForce": 0,
+              "BreakTorque": 0,
+              "DampingRatio": 1,
+              "EnableCollision": false,
+              "Fequency": 1,
+              "Friction": 0,
+              "LocalFrame1": {
+                "UniformScale": 1,
+                "IsValid": true,
+                "ForwardRay": {
+                  "Forward": "1,0,0"
+                },
+                "Scale": "1,1,1",
+                "Rotation": "0,0,0,1"
+              },
+              "LocalFrame2": {
+                "UniformScale": 1,
+                "IsValid": true,
+                "ForwardRay": {
+                  "Forward": "1,0,0"
+                },
+                "Scale": "1,1,1",
+                "Rotation": "0,0,0,1"
+              },
+              "MaxAngle": 0,
+              "MaxTorque": 0,
+              "MinAngle": 0,
+              "Motor": "Disabled",
+              "TargetAngle": 0,
+              "TargetVelocity": 0
+            },
+            {
+              "__type": "Duccsoft.Rotator",
+              "__guid": "9037a8bb-3f8b-435f-bfdb-376d87e81c5b",
+              "CoordinateSpace": "Local",
+              "Rigidbody": {
+                "_type": "component",
+                "component_id": "0ad5c6d9-3ee7-4705-93df-0cb2cced28a0",
+                "go": "47712029-65fe-4ec3-ac7d-048ed1949619",
+                "component_type": "Rigidbody"
+              },
+              "RotationPerSecond": "0,2700,0"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "SceneProperties": {
+    "FixedUpdateFrequency": 50,
+    "MaxFixedUpdates": 5,
+    "NetworkFrequency": 30,
+    "NetworkInterpolation": true,
+    "PhysicsSubSteps": 1,
+    "ThreadedAnimation": true,
+    "TimeScale": 1,
+    "UseFixedUpdate": true,
+    "NavMesh": {
+      "Enabled": false,
+      "IncludeStaticBodies": true,
+      "IncludeKeyframedBodies": true,
+      "EditorAutoUpdate": true,
+      "AgentHeight": 64,
+      "AgentRadius": 16,
+      "AgentStepSize": 18,
+      "AgentMaxSlope": 40,
+      "ExcludedBodies": "",
+      "IncludedBodies": ""
+    }
+  },
+  "Title": "rotator",
+  "Description": "",
+  "ResourceVersion": 1,
+  "__references": [],
+  "__version": 1
+}
